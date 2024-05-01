@@ -33,7 +33,7 @@ export default function Hero() {
         <Image
           src={HeroImg}
           alt="portfolio"
-          className="hero-img"
+          className="hero-img z-10"
           // width={300}
           // height={300}
         />
