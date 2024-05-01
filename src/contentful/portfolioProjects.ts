@@ -25,7 +25,7 @@ export interface IProject {
   url_github: string;
   technologies: string[];
   featured_image: IContentImage | null;
-  //   images_list: IContentImage | null;
+  //   images_list: IContentImage | null; // TODO
 }
 
 /**-------------------------------------------------------------------------------
@@ -106,4 +106,29 @@ export async function fetchAllProjects({
   return rawProjectsResult.items.map(
     (blogPost) => parseContentfulProject(blogPost) as IProject,
   );
+}
+
+/**-------------------------------------------------------------------------------
+ * A function to fetch a single project by its title.
+ * Optionally uses the Contentful content preview.
+ */
+interface IFetchSingleBlogPost {
+  preview: boolean;
+  title: string;
+}
+
+export async function fetchSingleBlogPost({
+  preview,
+  title,
+}: IFetchSingleBlogPost): Promise<IProject | null> {
+  const contentful = contentfulClient({ preview });
+
+  const rawBlogPostResult =
+    await contentful.getEntries<TypePortfolioDanielSkeleton>({
+      content_type: "portfolioDaniel",
+      "fields.title": title,
+      include: 2,
+    });
+
+  return parseContentfulProject(rawBlogPostResult.items[0]) as IProject;
 }
