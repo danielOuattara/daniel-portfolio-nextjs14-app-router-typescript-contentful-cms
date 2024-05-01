@@ -14,15 +14,19 @@ export default async function Home() {
     preview: draftMode().isEnabled,
   });
 
-  console.log("featuredProjects.length = ", featuredProjects.length);
-  console.log("featuredProjects = ", featuredProjects);
+  // console.log("featuredProjects.length = ", featuredProjects.length);
+  // console.log("featuredProjects = ", featuredProjects);
 
   return (
     <main>
       <h1>Home page</h1>
       <Hero />
       <Services />
-      <Projects />
+      <Projects
+        title="featured projects"
+        showLinkToProjects={true}
+        projects={featuredProjects}
+      />
     </main>
   );
 }

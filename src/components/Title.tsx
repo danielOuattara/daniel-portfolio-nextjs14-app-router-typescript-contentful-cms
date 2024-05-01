@@ -1,3 +1,8 @@
-export default function Title() {
-  return <h2>Title</h2>;
+export default function Title({ title }: { title: string }) {
+  return (
+    <div className="section-title">
+      <h2>{title || "Section Title"}</h2>
+      <div className="underline"></div>
+    </div>
+  );
 }
