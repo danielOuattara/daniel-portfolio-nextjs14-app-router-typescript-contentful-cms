@@ -17,8 +17,8 @@ type TProjectEntry = Entry<TypePortfolioDanielSkeleton, undefined, string>;
 
 export interface IProject {
   title: string;
-  category: "backend" | "frontend" | "fullstack" | "mobile";
-  level: "advanced" | "beginner" | "intermediate";
+  category: string /* "backend" | "frontend" | "fullstack" | "mobile"; */;
+  level: string /* "advanced" | "beginner" | "intermediate"; */;
   description: string;
   featured: boolean;
   url_website: string;
@@ -83,7 +83,7 @@ export async function fetchFeaturedProjects({
 }
 
 /**-------------------------------------------------------------------------------
- * A function to fetch featured projects.
+ * A function to fetch all projects.
  * Optionally it uses the Contentful content preview.
  */
 
@@ -104,7 +104,7 @@ export async function fetchAllProjects({
     });
 
   return rawProjectsResult.items.map(
-    (blogPost) => parseContentfulProject(blogPost) as IProject,
+    (project) => parseContentfulProject(project) as IProject,
   );
 }
 
@@ -117,18 +117,45 @@ interface IFetchSingleBlogPost {
   title: string;
 }
 
-export async function fetchSingleBlogPost({
+export async function fetchSingleProject({
   preview,
   title,
-}: IFetchSingleBlogPost): Promise<IProject | null> {
+}: IFetchSingleBlogPost): Promise<IProject> {
   const contentful = contentfulClient({ preview });
 
-  const rawBlogPostResult =
+  const rawProjectResult =
     await contentful.getEntries<TypePortfolioDanielSkeleton>({
       content_type: "portfolioDaniel",
       "fields.title": title,
       include: 2,
     });
 
-  return parseContentfulProject(rawBlogPostResult.items[0]) as IProject;
+  return parseContentfulProject(rawProjectResult.items[0]) as IProject;
+}
+
+/**-------------------------------------------------------------------------------
+ * A function to fetch all project by category.
+ * Optionally uses the Contentful content preview.
+ */
+interface IFetchProjectsByCategory {
+  preview: boolean;
+  category: string;
+}
+
+export async function fetchProjectsByCategory({
+  preview,
+  category,
+}: IFetchProjectsByCategory): Promise<IProject[]> {
+  const contentful = contentfulClient({ preview });
+
+  const rawProjectsResult =
+    await contentful.getEntries<TypePortfolioDanielSkeleton>({
+      content_type: "portfolioDaniel",
+      "fields.category": category,
+      include: 2,
+    });
+
+  return rawProjectsResult.items.map(
+    (project) => parseContentfulProject(project) as IProject,
+  );
 }

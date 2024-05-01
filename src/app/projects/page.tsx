@@ -1,21 +1,18 @@
-import { Hero, Projects, Services } from "@/components";
+import { Projects } from "@/components";
 import type { Metadata } from "next";
 import { fetchAllProjects } from "@/contentful/portfolioProjects";
 import { draftMode } from "next/headers";
 
 export const metadata: Metadata = {
-  title: "Home page",
+  title: "Projects | Portfolio ",
   description:
-    "Home page for Daniel portfolio where skills for fullstack wed development are presented as projects",
+    "Projects page for Daniel portfolio where one can find fullstack, frontend, backend and mobile projects, with link to hosted CDN",
 };
 
 export default async function ProjectsPage() {
   const allProjects = await fetchAllProjects({
     preview: draftMode().isEnabled,
   });
-
-  // console.log("allProjects.length = ", allProjects.length);
-  // console.log("allProjects = ", allProjects);
 
   return (
     <main>
