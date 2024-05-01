@@ -81,3 +81,29 @@ export async function fetchFeaturedProjects({
     (blogPost) => parseContentfulProject(blogPost) as IProject,
   );
 }
+
+/**-------------------------------------------------------------------------------
+ * A function to fetch featured projects.
+ * Optionally it uses the Contentful content preview.
+ */
+
+interface IFetchProjects {
+  preview: boolean;
+}
+
+export async function fetchAllProjects({
+  preview,
+}: IFetchProjects): Promise<IProject[]> {
+  const contentful = contentfulClient({ preview });
+
+  const rawProjectsResult =
+    await contentful.getEntries<TypePortfolioDanielSkeleton>({
+      content_type: "portfolioDaniel",
+      include: 2,
+      order: ["fields.title"],
+    });
+
+  return rawProjectsResult.items.map(
+    (blogPost) => parseContentfulProject(blogPost) as IProject,
+  );
+}
