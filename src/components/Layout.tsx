@@ -1,6 +1,14 @@
 import { Navbar, Sidebar, Footer, Submenu } from "./index";
 import "@/assets/css/main.css";
 
-export default function Layout() {
-  return <h2>Layout</h2>;
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <>
+      <Navbar />
+      <Sidebar />
+      <Submenu />
+      {children}
+      <Footer />
+    </>
+  );
 }
