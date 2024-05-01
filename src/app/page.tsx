@@ -1,3 +1,4 @@
+import { Hero, Projects, Services } from "@/components";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -10,6 +11,9 @@ export default function Home() {
   return (
     <main>
       <h1>Home page</h1>
+      <Hero />
+      <Services />
+      <Projects />
     </main>
   );
 }
