@@ -19,7 +19,7 @@ export default function Projects({
 
       <div className="section-center projects-center">
         {projects.map((project, index) => (
-          <Project key={project.title} index={index} project={project} />
+          <Project key={project.slug} index={index} project={project} />
         ))}
       </div>
 
