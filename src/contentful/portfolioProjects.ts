@@ -17,6 +17,7 @@ type TypeProjectEntry = Entry<TypePortfolioProjectsSkeleton, undefined, string>;
 
 export interface IProject {
   title: string;
+  slug: string;
   category: "backend" | "frontend" | "fullstack" | "mobile";
   level: "advanced" | "beginner" | "intermediate";
   description: string;
@@ -38,6 +39,7 @@ export function parseContentfulProject(
 ): IProject {
   return {
     title: projectEntry.fields.title,
+    slug: projectEntry.fields.slug,
     category: projectEntry.fields.category,
     level: projectEntry.fields.level,
     description: projectEntry.fields.description,
@@ -85,7 +87,7 @@ export async function fetchProjects({
 }
 
 /**-------------------------------------------------------------------------------
- * A function to fetch a single project by its title.
+ * A function to fetch a single project by its title or slug.
  * Optionally uses the Contentful content preview.
  */
 interface IFetchSingleProject {
