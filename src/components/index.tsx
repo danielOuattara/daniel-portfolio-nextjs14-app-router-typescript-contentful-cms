@@ -1,11 +1,13 @@
+export { default as Document } from "./Document";
+export { default as Documents } from "./Documents";
 export { default as Footer } from "./Footer";
 export { default as Hero } from "./Hero";
 export { default as Jobs } from "./Jobs";
 export { default as Layout } from "./Layout";
 export { default as Navbar } from "./Navbar";
 export { default as Project } from "./Project";
-export { default as ProjectView } from "./ProjectView";
 export { default as Projects } from "./Projects";
+export { default as ProjectView } from "./ProjectView";
 export { default as Services } from "./Services";
 export { default as Sidebar } from "./Sidebar";
 export { default as Submenu } from "./Submenu";
