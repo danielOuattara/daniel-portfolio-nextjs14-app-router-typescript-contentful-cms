@@ -1,6 +1,6 @@
 import { Hero, Projects, Services } from "@/components";
 import type { Metadata } from "next";
-import { fetchFeaturedProjects } from "@/contentful/portfolioProjects";
+import { fetchProjects } from "@/contentful/portfolioProjects";
 import { draftMode } from "next/headers";
 
 export const metadata: Metadata = {
@@ -10,8 +10,9 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const featuredProjects = await fetchFeaturedProjects({
+  const featuredProjects = await fetchProjects({
     preview: draftMode().isEnabled,
+    featured: true,
   });
 
   // console.log("featuredProjects.length = ", featuredProjects.length);
