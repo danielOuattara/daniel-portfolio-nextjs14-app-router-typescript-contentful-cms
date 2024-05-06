@@ -15,12 +15,8 @@ export default async function Home() {
     featured: true,
   });
 
-  // console.log("featuredProjects.length = ", featuredProjects.length);
-  // console.log("featuredProjects = ", featuredProjects);
-
   return (
     <main>
-      <h1>Home page</h1>
       <Hero />
       <Services />
       <Projects
