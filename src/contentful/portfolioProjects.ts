@@ -60,27 +60,27 @@ export function parseContentfulProject(
  * Optionally it uses the Contentful content preview.
  */
 
-interface IFetchProjects {
-  preview: boolean;
-}
+// interface IFetchProjects {
+//   preview: boolean;
+// }
 
-export async function fetchFeaturedProjects({
-  preview,
-}: IFetchProjects): Promise<IProject[]> {
-  const contentful = contentfulClient({ preview });
+// export async function fetchFeaturedProjects({
+//   preview,
+// }: IFetchProjects): Promise<IProject[]> {
+//   const contentful = contentfulClient({ preview });
 
-  const rawProjectsResult =
-    await contentful.getEntries<TypePortfolioProjectsSkeleton>({
-      content_type: "portfolioProjects",
-      include: 2,
-      order: ["fields.title"],
-      "fields.featured": true,
-    });
+//   const rawProjectsResult =
+//     await contentful.getEntries<TypePortfolioProjectsSkeleton>({
+//       content_type: "portfolioProjects",
+//       include: 2,
+//       order: ["fields.title"],
+//       "fields.featured": true,
+//     });
 
-  return rawProjectsResult.items.map(
-    (blogPost) => parseContentfulProject(blogPost) as IProject,
-  );
-}
+//   return rawProjectsResult.items.map(
+//     (blogPost) => parseContentfulProject(blogPost) as IProject,
+//   );
+// }
 
 /**-------------------------------------------------------------------------------
  * A function to fetch all projects.
@@ -89,10 +89,12 @@ export async function fetchFeaturedProjects({
 
 interface IFetchProjects {
   preview: boolean;
+  featured: boolean;
 }
 
-export async function fetchAllProjects({
+export async function fetchProjects({
   preview,
+  featured,
 }: IFetchProjects): Promise<IProject[]> {
   const contentful = contentfulClient({ preview });
 
@@ -101,6 +103,7 @@ export async function fetchAllProjects({
       content_type: "portfolioProjects",
       include: 2,
       order: ["fields.title"],
+      "fields.featured": featured,
     });
 
   return rawProjectsResult.items.map(
