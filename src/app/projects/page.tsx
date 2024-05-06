@@ -1,6 +1,6 @@
 import { Projects } from "@/components";
 import type { Metadata } from "next";
-import { fetchAllProjects } from "@/contentful/portfolioProjects";
+import { fetchProjects } from "@/contentful/portfolioProjects";
 import { draftMode } from "next/headers";
 
 export const metadata: Metadata = {
@@ -10,8 +10,9 @@ export const metadata: Metadata = {
 };
 
 export default async function ProjectsPage() {
-  const allProjects = await fetchAllProjects({
+  const allProjects = await fetchProjects({
     preview: draftMode().isEnabled,
+    featured: false,
   });
 
   return (
