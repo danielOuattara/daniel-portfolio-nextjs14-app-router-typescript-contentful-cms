@@ -1,25 +1,12 @@
-import Footer from "./Footer";
-import Hero from "./Hero";
-// import Jobs from "./Jobs";
-import Layout from "./Layout";
-import Navbar from "./Navbar";
-import Project from "./Project";
-import Projects from "./Projects";
-import Services from "./Services";
-import Sidebar from "./Sidebar";
-import Submenu from "./Submenu";
-import Title from "./Title";
-
-export {
-  Footer,
-  Hero,
-  // Jobs,
-  Layout,
-  Navbar,
-  Project,
-  Projects,
-  Services,
-  Sidebar,
-  Submenu,
-  Title,
-};
+export { default as Footer } from "./Footer";
+export { default as Hero } from "./Hero";
+export { default as Jobs } from "./Jobs";
+export { default as Layout } from "./Layout";
+export { default as Navbar } from "./Navbar";
+export { default as Project } from "./Project";
+export { default as ProjectView } from "./ProjectView";
+export { default as Projects } from "./Projects";
+export { default as Services } from "./Services";
+export { default as Sidebar } from "./Sidebar";
+export { default as Submenu } from "./Submenu";
+export { default as Title } from "./Title";
