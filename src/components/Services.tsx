@@ -1,4 +1,4 @@
-import { Title } from "./index";
+import { Title } from "@/components";
 import { services } from "@/constants";
 
 export default function Services() {

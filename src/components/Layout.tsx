@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Navbar, Sidebar, Footer, Submenu } from "./index";
+import { Navbar, Sidebar, Footer, Submenu } from "@/components";
 import "@/assets/css/main.css";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
