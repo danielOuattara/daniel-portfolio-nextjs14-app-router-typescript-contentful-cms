@@ -2,13 +2,13 @@
  * Next, let's create a little helper for fetching one or multiple project(s):
  */
 
-import { TypePortfolioDanielSkeleton } from "./types";
+import { TypePortfolioProjectsSkeleton } from "./types";
 import { Entry } from "contentful";
 import { Document as RichTextDocument } from "@contentful/rich-text-types";
 import contentfulClient from "./contentfulClients";
 import { IContentImage, parseContentfulContentImage } from "./contentImage";
 
-type TProjectEntry = Entry<TypePortfolioDanielSkeleton, undefined, string>;
+type TProjectEntry = Entry<TypePortfolioProjectsSkeleton, undefined, string>;
 
 /**-------------------------------------------------------------------------------
  * A simplified version of project interface:
@@ -17,8 +17,8 @@ type TProjectEntry = Entry<TypePortfolioDanielSkeleton, undefined, string>;
 
 export interface IProject {
   title: string;
-  category: string /* "backend" | "frontend" | "fullstack" | "mobile"; */;
-  level: string /* "advanced" | "beginner" | "intermediate"; */;
+  category: "backend" | "frontend" | "fullstack" | "mobile";
+  level: "advanced" | "beginner" | "intermediate";
   description: string;
   featured: boolean;
   url_website: string;
@@ -34,11 +34,11 @@ export interface IProject {
  */
 
 export function parseContentfulProject(
-  projectEntry?: TProjectEntry,
+  projectEntry: TProjectEntry,
 ): IProject | null {
-  if (!projectEntry) {
-    return null;
-  }
+  // if (!projectEntry) {
+  //   return null;
+  // }
   return {
     title: projectEntry.fields.title,
     category: projectEntry.fields.category,
@@ -70,8 +70,8 @@ export async function fetchFeaturedProjects({
   const contentful = contentfulClient({ preview });
 
   const rawProjectsResult =
-    await contentful.getEntries<TypePortfolioDanielSkeleton>({
-      content_type: "portfolioDaniel",
+    await contentful.getEntries<TypePortfolioProjectsSkeleton>({
+      content_type: "portfolioProjects",
       include: 2,
       order: ["fields.title"],
       "fields.featured": true,
@@ -97,8 +97,8 @@ export async function fetchAllProjects({
   const contentful = contentfulClient({ preview });
 
   const rawProjectsResult =
-    await contentful.getEntries<TypePortfolioDanielSkeleton>({
-      content_type: "portfolioDaniel",
+    await contentful.getEntries<TypePortfolioProjectsSkeleton>({
+      content_type: "portfolioProjects",
       include: 2,
       order: ["fields.title"],
     });
@@ -112,7 +112,7 @@ export async function fetchAllProjects({
  * A function to fetch a single project by its title.
  * Optionally uses the Contentful content preview.
  */
-interface IFetchSingleBlogPost {
+interface IFetchSingleProject {
   preview: boolean;
   title: string;
 }
@@ -120,12 +120,12 @@ interface IFetchSingleBlogPost {
 export async function fetchSingleProject({
   preview,
   title,
-}: IFetchSingleBlogPost): Promise<IProject> {
+}: IFetchSingleProject): Promise<IProject> {
   const contentful = contentfulClient({ preview });
 
   const rawProjectResult =
-    await contentful.getEntries<TypePortfolioDanielSkeleton>({
-      content_type: "portfolioDaniel",
+    await contentful.getEntries<TypePortfolioProjectsSkeleton>({
+      content_type: "portfolioProjects",
       "fields.title": title,
       include: 2,
     });
@@ -139,7 +139,7 @@ export async function fetchSingleProject({
  */
 interface IFetchProjectsByCategory {
   preview: boolean;
-  category: string;
+  category: "backend" | "frontend" | "fullstack" | "mobile";
 }
 
 export async function fetchProjectsByCategory({
@@ -149,8 +149,9 @@ export async function fetchProjectsByCategory({
   const contentful = contentfulClient({ preview });
 
   const rawProjectsResult =
-    await contentful.getEntries<TypePortfolioDanielSkeleton>({
-      content_type: "portfolioDaniel",
+    await contentful.getEntries<TypePortfolioProjectsSkeleton>({
+      content_type: "portfolioProjects",
+      // "fields.category": category,
       "fields.category": category,
       include: 2,
     });
