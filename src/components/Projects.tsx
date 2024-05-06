@@ -1,9 +1,8 @@
 import { Title, Project } from "./index";
 import Link from "next/link";
-import Image from "next/image";
 import { IProject } from "@/contentful/portfolioProjects";
 
-type TypeProjectsProp = {
+type TypeProjectsProps = {
   title: string;
   showLinkToProjects?: boolean;
   projects: IProject[];
@@ -13,7 +12,7 @@ export default function Projects({
   title,
   projects,
   showLinkToProjects,
-}: TypeProjectsProp) {
+}: TypeProjectsProps) {
   return (
     <section className="section projects">
       <Title title={title} />
