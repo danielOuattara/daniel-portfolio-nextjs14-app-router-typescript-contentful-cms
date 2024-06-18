@@ -1,7 +1,16 @@
-import { Projects } from "@/components";
+import { ProjectCardList } from "@/components";
 import type { Metadata } from "next";
 import { fetchProjects } from "@/contentful/portfolioProjects";
 import { draftMode } from "next/headers";
+
+//------------------------
+
+export async function generateStaticParams(): Promise<{ slug: string }[]> {
+  const allProjects = await fetchProjects({ preview: false });
+  return allProjects.map((post) => ({ slug: post.slug }));
+}
+
+//------------------------
 
 export const metadata: Metadata = {
   title: "Projects | Portfolio ",
@@ -9,7 +18,9 @@ export const metadata: Metadata = {
     "Projects page for Daniel portfolio where one can find fullstack, frontend, backend and mobile projects, with link to hosted CDN",
 };
 
-export default async function ProjectsPage() {
+//------------------------
+
+export default async function AllProjectsPage() {
   const allProjects = await fetchProjects({
     preview: draftMode().isEnabled,
   });
@@ -17,7 +28,7 @@ export default async function ProjectsPage() {
   return (
     <main>
       <section className="projects-page">
-        <Projects title="all projects" projects={allProjects} />
+        <ProjectCardList title="all projects" projects={allProjects} />
       </section>
     </main>
   );
