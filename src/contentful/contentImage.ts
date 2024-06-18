@@ -1,6 +1,13 @@
 import { Asset, AssetLink } from "contentful";
 
 /**
+ * This utility transforms the rather large image asset
+ * objects that Contentful provides us with into nice
+ * little custom ContentImage objects that have `src`,
+ *`alt`, `width` and `height` attributes.
+ */
+
+/**
  * Our simplified version of an image asset:
  * we don't need all the data that Contentful gives us.
  */

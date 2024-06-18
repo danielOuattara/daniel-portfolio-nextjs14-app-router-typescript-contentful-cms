@@ -60,7 +60,7 @@ export function parseContentfulProject(
  */
 
 interface IFetchProjects {
-  preview: boolean;
+  preview?: boolean;
   featured?: boolean;
   category?: "backend" | "frontend" | "fullstack" | "mobile";
 }
@@ -70,16 +70,18 @@ export async function fetchProjects({
   featured,
   category,
 }: IFetchProjects): Promise<IProject[]> {
-  const contentful = contentfulClient({ preview });
+  const client = contentfulClient({ preview });
 
   const rawProjectsResult =
-    await contentful.getEntries<TypePortfolioProjectsSkeleton>({
+    await client.getEntries<TypePortfolioProjectsSkeleton>({
       content_type: "portfolioProjects",
       include: 2,
       order: ["fields.title"],
       "fields.featured": featured,
       "fields.category": category,
     });
+
+  // console.dir(rawProjectsResult.items[0], { depth: null });
 
   return rawProjectsResult.items.map(
     (rawProject) => parseContentfulProject(rawProject) as IProject,
@@ -100,15 +102,15 @@ export async function fetchSingleProject({
   preview,
   title,
   slug,
-}: IFetchSingleProject): Promise<IProject> {
-  const contentful = contentfulClient({ preview });
+}: IFetchSingleProject): Promise<IProject | null> {
+  const client = contentfulClient({ preview });
 
   const rawProjectResult =
-    await contentful.getEntries<TypePortfolioProjectsSkeleton>({
+    await client.getEntries<TypePortfolioProjectsSkeleton>({
       content_type: "portfolioProjects",
+      include: 2,
       "fields.title": title ?? "",
       "fields.slug": slug ?? "",
-      include: 2,
     });
 
   return parseContentfulProject(rawProjectResult.items[0]) as IProject;

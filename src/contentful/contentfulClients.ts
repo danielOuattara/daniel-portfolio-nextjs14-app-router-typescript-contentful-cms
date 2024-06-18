@@ -1,6 +1,9 @@
 /**
- * Using our freshly-generated types, let's fetch some content from Contentful.
- * First, let's create a little utility that lets us optionally fetch unpublished posts:
+ * Using our freshly-generated types, let's fetch some content
+ * from Contentful.
+ *
+ * First, let's create a little utility that lets us optionally
+ * fetch unpublished posts:
  */
 
 import { createClient } from "contentful";
@@ -35,6 +38,7 @@ const previewClient = createClient({
 export default function contentfulClient({ preview = false }) {
   if (preview) {
     return previewClient;
+  } else {
+    return client;
   }
-  return client;
 }

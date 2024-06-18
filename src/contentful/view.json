@@ -1,0 +1,328 @@
+{
+  "sys": { "type": "Array" },
+  "total": 3,
+  "skip": 0,
+  "limit": 100,
+  "items": [
+    {
+      "metadata": { "tags": [] },
+      "sys": {
+        "space": {
+          "sys": { "type": "Link", "linkType": "Space", "id": "jqhl93v1jzqo" }
+        },
+        "id": "6dgWbppPyLdXooFmIRLv4J",
+        "type": "Entry",
+        "createdAt": "2024-05-06T12:36:52.450Z",
+        "updatedAt": "2024-05-06T12:36:52.450Z",
+        "environment": {
+          "sys": { "id": "master", "type": "Link", "linkType": "Environment" }
+        },
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "portfolioProjects"
+          }
+        },
+        "locale": "en-US"
+      },
+      "fields": {
+        "title": "backend Project 1",
+        "slug": "backend-project-1",
+        "category": "backend",
+        "level": "advanced",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus non enim praesent elementum facilisis leo vel. Elementum nisi quis eleifend quam. Tristique et egestas quis ipsum. Netus et malesuada fames ac turpis egestas maecenas pharetra convallis. Turpis in eu mi bibendum neque egestas congue quisque egestas. Vel fringilla est ullamcorper eget nulla facilisi etiam. Sed risus ultricies tristique nulla. Sed libero enim sed faucibus turpis in eu mi bibendum. Sed elementum tempus egestas sed sed risus pretium quam vulputate. Imperdiet proin fermentum leo vel orci porta. Diam volutpat commodo sed egestas egestas. Aliquam malesuada bibendum arcu vitae. Leo vel orci porta non pulvinar neque laoreet suspendisse interdum. Integer feugiat scelerisque varius morbi enim nunc. Sit amet consectetur adipiscing elit ut aliquam purus.",
+        "featured": true,
+        "url_website": "https://daniel-gatsby-simple-recipes.netlify.app",
+        "url_github": "https://github.com/danielOuattara/Gatsby_John_Smilga_Udemy/tree/master/B_SimplyRecipes_Project_Gatsby_5/12_simple_recipes_netlify_continuous_deployment",
+        "technologies": ["node", "express", "typescript"],
+        "featured_image": {
+          "metadata": { "tags": [] },
+          "sys": {
+            "space": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Space",
+                "id": "jqhl93v1jzqo"
+              }
+            },
+            "id": "1A9UWZJg5RYvCM1ejiIAp1",
+            "type": "Asset",
+            "createdAt": "2023-09-29T09:26:22.191Z",
+            "updatedAt": "2023-09-29T09:31:38.186Z",
+            "environment": {
+              "sys": {
+                "id": "master",
+                "type": "Link",
+                "linkType": "Environment"
+              }
+            },
+            "revision": 2,
+            "locale": "en-US"
+          },
+          "fields": {
+            "title": "pagination",
+            "description": "",
+            "file": {
+              "url": "//images.ctfassets.net/jqhl93v1jzqo/1A9UWZJg5RYvCM1ejiIAp1/c1a7ff3c3e95bdd58c1cd9eaee2e4eb7/pagination_2.png",
+              "details": {
+                "size": 39417,
+                "image": { "width": 1897, "height": 872 }
+              },
+              "fileName": "pagination_2.png",
+              "contentType": "image/png"
+            }
+          }
+        }
+      }
+    },
+    {
+      "metadata": { "tags": [] },
+      "sys": {
+        "space": {
+          "sys": { "type": "Link", "linkType": "Space", "id": "jqhl93v1jzqo" }
+        },
+        "id": "NYNURsf53ljPLqXVGSbAi",
+        "type": "Entry",
+        "createdAt": "2024-05-06T12:38:54.968Z",
+        "updatedAt": "2024-05-06T12:38:54.968Z",
+        "environment": {
+          "sys": { "id": "master", "type": "Link", "linkType": "Environment" }
+        },
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "portfolioProjects"
+          }
+        },
+        "locale": "en-US"
+      },
+      "fields": {
+        "title": "Frontend project 1",
+        "slug": "frontend-project-1",
+        "category": "frontend",
+        "level": "advanced",
+        "description": "Turpis in eu mi bibendum neque egestas congue quisque egestas. Vel fringilla est ullamcorper eget nulla facilisi etiam. Sed risus ultricies tristique nulla. Sed libero enim sed faucibus turpis in eu mi bibendum. Sed elementum tempus egestas sed sed risus pretium quam vulputate. Imperdiet proin fermentum leo vel orci porta. Diam volutpat commodo sed egestas egestas. Aliquam malesuada bibendum arcu vitae. Leo vel orci porta non pulvinar neque laoreet suspendisse interdum. Integer feugiat scelerisque varius morbi enim nunc. Sit amet consectetur adipiscing elit ut aliquam purus.",
+        "featured": true,
+        "url_website": "https://daniel-gatsby-simple-recipes.netlify.app",
+        "url_github": "https://github.com/danielOuattara/Gatsby_John_Smilga_Udemy/tree/master/B_SimplyRecipes_Project_Gatsby_5/12_simple_recipes_netlify_continuous_deployment",
+        "technologies": ["react", "typescript", "gatsby", "contentful"],
+        "featured_image": {
+          "metadata": { "tags": [] },
+          "sys": {
+            "space": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Space",
+                "id": "jqhl93v1jzqo"
+              }
+            },
+            "id": "1RzCXIRCBolqpgYWgM7wYa",
+            "type": "Asset",
+            "createdAt": "2023-09-29T09:06:50.560Z",
+            "updatedAt": "2023-09-29T09:06:50.560Z",
+            "environment": {
+              "sys": {
+                "id": "master",
+                "type": "Link",
+                "linkType": "Environment"
+              }
+            },
+            "revision": 1,
+            "locale": "en-US"
+          },
+          "fields": {
+            "title": "Simply Recipes",
+            "description": "",
+            "file": {
+              "url": "//images.ctfassets.net/jqhl93v1jzqo/1RzCXIRCBolqpgYWgM7wYa/70b85d4a7e93921456954839bc331acf/simple_recipes_2.png",
+              "details": {
+                "size": 424129,
+                "image": { "width": 1920, "height": 1122 }
+              },
+              "fileName": "simple_recipes_2.png",
+              "contentType": "image/png"
+            }
+          }
+        }
+      }
+    },
+    {
+      "metadata": { "tags": [] },
+      "sys": {
+        "space": {
+          "sys": { "type": "Link", "linkType": "Space", "id": "jqhl93v1jzqo" }
+        },
+        "id": "6Opfd0BtO0SuoDl5A6bukt",
+        "type": "Entry",
+        "createdAt": "2024-05-06T12:40:44.754Z",
+        "updatedAt": "2024-05-06T12:40:44.754Z",
+        "environment": {
+          "sys": { "id": "master", "type": "Link", "linkType": "Environment" }
+        },
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "portfolioProjects"
+          }
+        },
+        "locale": "en-US"
+      },
+      "fields": {
+        "title": "FullStack Project 1",
+        "slug": "fullstack-project-1",
+        "category": "fullstack",
+        "level": "advanced",
+        "description": "Elementum nisi quis eleifend quam. Tristique et egestas quis ipsum. Netus et malesuada fames ac turpis egestas maecenas pharetra convallis. Turpis in eu mi bibendum neque egestas congue quisque egestas. Vel fringilla est ullamcorper eget nulla facilisi etiam. Sed risus ultricies tristique nulla. Sed libero enim sed faucibus turpis in eu mi bibendum. Sed elementum tempus egestas sed sed risus pretium quam vulputate. Imperdiet proin fermentum leo vel orci porta. Diam volutpat commodo sed egestas egestas. Aliquam malesuada bibendum arcu vitae.",
+        "featured": true,
+        "url_website": "https://daniel-gatsby-simple-recipes.netlify.app",
+        "url_github": "https://github.com/danielOuattara/Gatsby_John_Smilga_Udemy/tree/master/B_SimplyRecipes_Project_Gatsby_5/12_simple_recipes_netlify_continuous_deployment",
+        "technologies": [
+          "node",
+          "express",
+          "typescript",
+          "react",
+          "redux",
+          "contentful"
+        ],
+        "featured_image": {
+          "metadata": { "tags": [] },
+          "sys": {
+            "space": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Space",
+                "id": "jqhl93v1jzqo"
+              }
+            },
+            "id": "1sJbKN1zeyEhlHlsPxD0uP",
+            "type": "Asset",
+            "createdAt": "2023-09-29T10:03:10.068Z",
+            "updatedAt": "2023-09-29T10:03:10.068Z",
+            "environment": {
+              "sys": {
+                "id": "master",
+                "type": "Link",
+                "linkType": "Environment"
+              }
+            },
+            "revision": 1,
+            "locale": "en-US"
+          },
+          "fields": {
+            "title": "simple recipes about",
+            "description": "",
+            "file": {
+              "url": "//images.ctfassets.net/jqhl93v1jzqo/1sJbKN1zeyEhlHlsPxD0uP/068bedded6fdc8bc3b56f27fffbd4679/simple_recipes_about.png",
+              "details": {
+                "size": 64646,
+                "image": { "width": 768, "height": 454 }
+              },
+              "fileName": "simple_recipes_about.png",
+              "contentType": "image/png"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "includes": {
+    "Asset": [
+      {
+        "metadata": { "tags": [] },
+        "sys": {
+          "space": {
+            "sys": { "type": "Link", "linkType": "Space", "id": "jqhl93v1jzqo" }
+          },
+          "id": "1A9UWZJg5RYvCM1ejiIAp1",
+          "type": "Asset",
+          "createdAt": "2023-09-29T09:26:22.191Z",
+          "updatedAt": "2023-09-29T09:31:38.186Z",
+          "environment": {
+            "sys": { "id": "master", "type": "Link", "linkType": "Environment" }
+          },
+          "revision": 2,
+          "locale": "en-US"
+        },
+        "fields": {
+          "title": "pagination",
+          "description": "",
+          "file": {
+            "url": "//images.ctfassets.net/jqhl93v1jzqo/1A9UWZJg5RYvCM1ejiIAp1/c1a7ff3c3e95bdd58c1cd9eaee2e4eb7/pagination_2.png",
+            "details": {
+              "size": 39417,
+              "image": { "width": 1897, "height": 872 }
+            },
+            "fileName": "pagination_2.png",
+            "contentType": "image/png"
+          }
+        }
+      },
+      {
+        "metadata": { "tags": [] },
+        "sys": {
+          "space": {
+            "sys": { "type": "Link", "linkType": "Space", "id": "jqhl93v1jzqo" }
+          },
+          "id": "1RzCXIRCBolqpgYWgM7wYa",
+          "type": "Asset",
+          "createdAt": "2023-09-29T09:06:50.560Z",
+          "updatedAt": "2023-09-29T09:06:50.560Z",
+          "environment": {
+            "sys": { "id": "master", "type": "Link", "linkType": "Environment" }
+          },
+          "revision": 1,
+          "locale": "en-US"
+        },
+        "fields": {
+          "title": "Simply Recipes",
+          "description": "",
+          "file": {
+            "url": "//images.ctfassets.net/jqhl93v1jzqo/1RzCXIRCBolqpgYWgM7wYa/70b85d4a7e93921456954839bc331acf/simple_recipes_2.png",
+            "details": {
+              "size": 424129,
+              "image": { "width": 1920, "height": 1122 }
+            },
+            "fileName": "simple_recipes_2.png",
+            "contentType": "image/png"
+          }
+        }
+      },
+      {
+        "metadata": { "tags": [] },
+        "sys": {
+          "space": {
+            "sys": { "type": "Link", "linkType": "Space", "id": "jqhl93v1jzqo" }
+          },
+          "id": "1sJbKN1zeyEhlHlsPxD0uP",
+          "type": "Asset",
+          "createdAt": "2023-09-29T10:03:10.068Z",
+          "updatedAt": "2023-09-29T10:03:10.068Z",
+          "environment": {
+            "sys": { "id": "master", "type": "Link", "linkType": "Environment" }
+          },
+          "revision": 1,
+          "locale": "en-US"
+        },
+        "fields": {
+          "title": "simple recipes about",
+          "description": "",
+          "file": {
+            "url": "//images.ctfassets.net/jqhl93v1jzqo/1sJbKN1zeyEhlHlsPxD0uP/068bedded6fdc8bc3b56f27fffbd4679/simple_recipes_about.png",
+            "details": {
+              "size": 64646,
+              "image": { "width": 768, "height": 454 }
+            },
+            "fileName": "simple_recipes_about.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    ]
+  }
+}
