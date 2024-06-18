@@ -1,8 +1,10 @@
 /* 
-slug[0] = category name
-slug[1] = project name slugged
+slug[0] = document category name : "certificates" | "diplomas"
+slug[1] = document name slugged
 
 */
+
+import { draftMode } from "next/headers";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -10,8 +12,7 @@ import {
   // fetchDocumentsByCategory,
   fetchSingleDocument,
 } from "@/contentful/portfolioDocuments";
-import { draftMode } from "next/headers";
-import { Documents } from "@/components";
+import { DocumentCardList } from "@/components";
 
 type Params = {
   params: {
@@ -19,32 +20,35 @@ type Params = {
   };
 };
 
-export default async function ParamsPage({ params: { slug } }: Params) {
-  if (slug.length === 1) {
+export default async function ParamsPage({ params }: Params) {
+  const isDraftMode = draftMode().isEnabled;
+  const [categorySlug, documentNameSlug] = params.slug;
+
+  if (categorySlug) {
     const allProjectsByCategory = await fetchDocuments({
-      preview: draftMode().isEnabled,
-      category: slug[0] as "certificates" | "diplomas",
+      preview: isDraftMode,
+      category: categorySlug as "certificates" | "diplomas",
     });
 
     return (
       <main>
-        <section className="projects-page">
-          <Documents
-            title={`${slug[0]}`}
+        <section className="documents-page">
+          <DocumentCardList
+            title={`${categorySlug}`}
             documents={allProjectsByCategory}
             showItemNumber={true}
-            showLinkToCertificates={slug[0] === "diplomas" ? true : false}
-            showLinkToDiploma={slug[0] === "certificates" ? true : false}
+            showLinkToCertificates={categorySlug === "diplomas" ? true : false}
+            showLinkToDiploma={categorySlug === "certificates" ? true : false}
           />
         </section>
       </main>
     );
   }
 
-  if (slug.length === 2) {
+  if (categorySlug && documentNameSlug) {
     const singleDocument = await fetchSingleDocument({
-      preview: draftMode().isEnabled,
-      slug: slug[1],
+      preview: isDraftMode,
+      slug: documentNameSlug,
     });
 
     return (
