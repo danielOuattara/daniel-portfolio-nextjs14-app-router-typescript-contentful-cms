@@ -1,4 +1,4 @@
-import { Documents } from "@/components";
+import { DocumentCardList } from "@/components";
 
 import type { Metadata } from "next";
 import { fetchDocuments } from "@/contentful/portfolioDocuments";
@@ -18,7 +18,7 @@ export default async function DocumentsPage() {
   return (
     <main>
       <section className="projects-page">
-        <Documents
+        <DocumentCardList
           documents={allDocuments}
           showLinkToDiploma={false}
           showItemNumber={false}
