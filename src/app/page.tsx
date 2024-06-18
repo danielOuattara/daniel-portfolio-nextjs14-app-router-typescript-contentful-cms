@@ -1,7 +1,16 @@
-import { Hero, Projects, Services } from "@/components";
+import { Hero, ProjectCardList, Services } from "@/components";
 import type { Metadata } from "next";
 import { fetchProjects } from "@/contentful/portfolioProjects";
 import { draftMode } from "next/headers";
+
+//------------------------------
+
+export async function generateStaticParams(): Promise<{ slug: string }[]> {
+  const allProjects = await fetchProjects({ preview: false });
+  return allProjects.map((post) => ({ slug: post.slug }));
+}
+
+//------------------------------
 
 export const metadata: Metadata = {
   title: "Home page",
@@ -9,7 +18,9 @@ export const metadata: Metadata = {
     "Home page for Daniel portfolio where skills for fullstack wed development are presented as projects",
 };
 
-export default async function Home() {
+//------------------------------
+
+export default async function HomePage() {
   const featuredProjects = await fetchProjects({
     preview: draftMode().isEnabled,
     featured: true,
@@ -19,7 +30,7 @@ export default async function Home() {
     <main>
       <Hero />
       <Services />
-      <Projects
+      <ProjectCardList
         title="featured projects"
         showLinkToProjects={true}
         projects={featuredProjects}
