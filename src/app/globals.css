@@ -1126,7 +1126,7 @@ Pages
 
 .project-template-page,
 .projects-page,
-.error-page,
+.documents-page .error-page,
 .about-page,
 .contact-page {
   background: var(--clr-grey-10);
