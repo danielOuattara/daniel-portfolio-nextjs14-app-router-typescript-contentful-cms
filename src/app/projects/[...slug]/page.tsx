@@ -1,17 +1,13 @@
-/* 
-slug[0] = category name
-slug[1] = project name slugged
+// slug[0] = project category name: "backend" | "frontend" | "fullstack" | "mobile"
+// slug[1] = project name slugged
 
-*/
-import Link from "next/link";
-import Image from "next/image";
+import { draftMode } from "next/headers";
 import {
   fetchProjects,
-  // fetchProjectsByCategory,
   fetchSingleProject,
 } from "@/contentful/portfolioProjects";
-import { draftMode } from "next/headers";
-import { Projects } from "@/components";
+import { Project, ProjectCardList } from "@/components";
+import { notFound } from "next/navigation";
 
 type Params = {
   params: {
@@ -19,48 +15,55 @@ type Params = {
   };
 };
 
-export default async function ParamsPage({ params: { slug } }: Params) {
-  if (slug.length === 1) {
-    const allProjectsByCategory = await fetchProjects({
-      preview: draftMode().isEnabled,
-      category: slug[0] as "backend" | "frontend" | "fullstack" | "mobile",
-    });
+export default async function ParamsPage({ params }: Params) {
+  const isDraftMode = draftMode().isEnabled;
+  const [categorySlug, projectNameSlug] = params.slug;
 
-    return (
-      <main>
-        <section className="projects-page">
-          <Projects
-            title={`${slug[0]} projects`}
-            projects={allProjectsByCategory}
-          />
-        </section>
-      </main>
-    );
-  }
+  try {
+    if (categorySlug && projectNameSlug) {
+      // Fetch & render a single project for a category
+      const singleProject = await fetchSingleProject({
+        preview: isDraftMode,
+        slug: projectNameSlug,
+      });
 
-  if (slug.length === 2) {
-    const singleProject = await fetchSingleProject({
-      preview: draftMode().isEnabled,
-      slug: slug[1],
-    });
+      if (!singleProject) {
+        notFound();
+      }
 
-    return (
-      <main className="project-template-page">
-        <h2>{singleProject.title}</h2>
-        <p>{singleProject.description}</p>
-        <a href={singleProject.url_website} target="_blank" rel="noreferrer">
-          <Image
-            src={`https://${singleProject.featured_image?.src}`}
-            alt={singleProject.title}
-            width={singleProject.featured_image?.width}
-            height={singleProject.featured_image?.height}
-            className="project-img"
-          />
-        </a>
-        <Link href="/projects" className="btn">
-          back to projects
-        </Link>
-      </main>
-    );
+      return <Project singleProject={singleProject} />;
+    }
+
+    if (categorySlug) {
+      // Fetch & render all projects by category
+      const projectsByCategory = await fetchProjects({
+        preview: isDraftMode,
+        category: categorySlug as
+          | "backend"
+          | "frontend"
+          | "fullstack"
+          | "mobile",
+      });
+
+      if (projectsByCategory.length === 0) {
+        notFound();
+      }
+
+      return (
+        <main>
+          <section className="projects-page">
+            <ProjectCardList
+              title={`${categorySlug} projects`}
+              projects={projectsByCategory}
+            />
+          </section>
+        </main>
+      );
+    } else {
+      notFound();
+    }
+  } catch (error) {
+    console.error("An error occurred:", error);
+    notFound();
   }
 }
