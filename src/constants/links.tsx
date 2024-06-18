@@ -26,8 +26,8 @@ const page_links = [
     page: "documents",
     subLinks: [
       { id: "4-1", url: "/documents/certificates", page: "certificates" },
-      { id: "4-2", url: "/documents/cv", page: "curriculum" },
-      { id: "4-3", url: "/documents/diplomas", page: "diplomas" },
+      { id: "4-2", url: "/documents/diplomas", page: "diplomas" },
+      { id: "4-3", url: "/documents/cv", page: "curriculum" },
       { id: "4-4", url: "/documents/packages", page: "packages" },
     ],
   },
