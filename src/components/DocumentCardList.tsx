@@ -1,4 +1,4 @@
-import { Title, Document } from "@/components";
+import { Title, DocumentCard } from "@/components";
 import Link from "next/link";
 import Image from "next/image";
 import { IDocument } from "@/contentful/portfolioDocuments";
@@ -11,7 +11,7 @@ type TypeDocumentsProps = {
   documents: IDocument[];
 };
 
-export default function Documents({
+export default function DocumentCardList({
   title,
   documents,
   showItemNumber,
@@ -24,7 +24,7 @@ export default function Documents({
 
       <div className="section-center projects-center">
         {documents.map((document, index) => (
-          <Document
+          <DocumentCard
             key={document.slug}
             index={index}
             document={document}

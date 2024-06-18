@@ -1,4 +1,9 @@
-import { Title, Project } from "./index";
+/**
+ * This component renders indirectly many projects.
+ * It accepts 3 arguments and 2 sub components
+ * */
+
+import { Title, ProjectCard } from "./index";
 import Link from "next/link";
 import { IProject } from "@/contentful/portfolioProjects";
 
@@ -8,7 +13,7 @@ type TypeProjectsProps = {
   projects: IProject[];
 };
 
-export default function Projects({
+export default function ProjectCardList({
   title,
   projects,
   showLinkToProjects,
@@ -19,7 +24,7 @@ export default function Projects({
 
       <div className="section-center projects-center">
         {projects.map((project, index) => (
-          <Project key={project.slug} index={index} project={project} />
+          <ProjectCard key={project.slug} index={index} project={project} />
         ))}
       </div>
 

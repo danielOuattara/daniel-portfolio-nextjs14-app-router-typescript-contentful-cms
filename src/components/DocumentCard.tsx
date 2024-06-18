@@ -12,7 +12,7 @@ type TypeSingleDocumentProps = {
   showItemNumber?: boolean;
 };
 
-export default function Document({
+export default function DocumentCard({
   index,
   document,
   showItemNumber,

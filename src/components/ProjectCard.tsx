@@ -11,7 +11,7 @@ type TypeSingleProjectProps = {
   project: IProject;
 };
 
-export default function ProjectView({
+export default function ProjectCard({
   index,
   project,
 }: TypeSingleProjectProps) {
@@ -27,9 +27,10 @@ export default function ProjectView({
 
       <div className="project-info">
         <Link
-          href={`/projects/${slugger(project.category)}/${slugger(
-            project.title,
-          )}`}
+          href={`/projects/${slugger(project.category)}/${project.slug}`}
+          // href={`/projects/${slugger(project.category)}/${slugger(
+          //   project.title,
+          // )}`}
           className="project-slug"
         >
           <h3>
