@@ -8,16 +8,13 @@ export default function Navbar(props: TypeNavbar) {
   //-----
   const displaySubMenu = (event: React.MouseEvent<HTMLElement>) => {
     const targetElement = event.target as HTMLElement; // Type assertion
-
     const menuDOMRect: DOMRect = targetElement.getBoundingClientRect();
-
     props.setSubMenuLocation({
       subMenuCenterPosition: (menuDOMRect.left + menuDOMRect.right) / 2,
       subMenuTopPosition: menuDOMRect.bottom,
     });
 
     const menuPageName: string = event.currentTarget.textContent || "";
-
     const menuPageToShow = page_links.find(
       (item) => item.page === menuPageName,
     );
@@ -38,7 +35,11 @@ export default function Navbar(props: TypeNavbar) {
   };
 
   return (
-    <nav className="navbar" onMouseOver={(event) => hideSubMenu(event)}>
+    <nav
+      className="navbar"
+      onMouseOver={(event) => hideSubMenu(event)}
+      style={{ border: "1px dashed green" }}
+    >
       <div className="nav-center">
         <div className="nav-header">
           <Link href="/">
