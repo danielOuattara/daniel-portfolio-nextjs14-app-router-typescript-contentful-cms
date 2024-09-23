@@ -5,7 +5,7 @@ import { fetchDocuments } from "@/contentful/portfolioDocuments";
 import { draftMode } from "next/headers";
 
 export const metadata: Metadata = {
-  title: "Projects | Portfolio ",
+  title: "Documents | Portfolio ",
   description:
     "Projects page for Daniel portfolio where one can find fullstack, frontend, backend and mobile projects, with link to hosted CDN",
 };
