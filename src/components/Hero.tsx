@@ -9,9 +9,9 @@ export default function Hero() {
       <section className="section-center hero-center">
         <article className="hero-info">
           <div className="hero-card">
-            <h1>I am Daniel</h1>
+            <h1>I am Daniel </h1>
             <div className="underline"></div>
-            <h4> Fullstack Developer: Web & Mobile</h4>
+            <p> your fullstack developer: web & mobile</p>
             <Link href={"/contact"} className="btn">
               Contact
             </Link>
@@ -33,9 +33,8 @@ export default function Hero() {
         <Image
           src={HeroImg}
           alt="portfolio"
-          className="hero-img z-10"
-          // width={300}
-          // height={300}
+          className="hero-img hero-img-svg"
+          style={{ maxWidth: "100%", height: "auto" }}
         />
       </section>
     </header>
