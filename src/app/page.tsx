@@ -33,6 +33,7 @@ export default async function HomePage() {
       <ProjectCardList
         title="featured projects"
         showLinkToProjects={true}
+        showNumbering={false}
         projects={featuredProjects}
       />
     </main>

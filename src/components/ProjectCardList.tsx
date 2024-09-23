@@ -7,24 +7,31 @@ import { Title, ProjectCard } from "./index";
 import Link from "next/link";
 import { IProject } from "@/contentful/portfolioProjects";
 
-type TypeProjectsProps = {
+type TypeProps = {
   title: string;
   showLinkToProjects?: boolean;
   projects: IProject[];
+  showNumbering: boolean;
 };
 
 export default function ProjectCardList({
   title,
   projects,
   showLinkToProjects,
-}: TypeProjectsProps) {
+  showNumbering,
+}: TypeProps) {
   return (
     <section className="section projects">
       <Title title={title} />
 
       <div className="section-center projects-center">
         {projects.map((project, index) => (
-          <ProjectCard key={project.slug} index={index} project={project} />
+          <ProjectCard
+            key={project.slug}
+            index={index}
+            project={project}
+            showNumbering={showNumbering}
+          />
         ))}
       </div>
 

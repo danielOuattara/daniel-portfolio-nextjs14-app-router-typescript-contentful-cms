@@ -9,20 +9,27 @@ import { slugger } from "@/utilities/slugger";
 type TypeSingleProjectProps = {
   index: number;
   project: IProject;
+  showNumbering: boolean;
 };
 
 export default function ProjectCard({
   index,
   project,
+  showNumbering,
 }: TypeSingleProjectProps) {
   return (
     <article className="project">
       <Image
         src={`https://${project.featured_image?.src}`}
         width={project.featured_image?.width}
-        height={project.featured_image?.height}
-        className="project-img"
         alt={project.title}
+        height={project.featured_image?.height}
+        style={{
+          maxWidth: "100%",
+          height: "auto",
+          // objectFit: "cover",
+        }}
+        className="project-img"
       />
 
       <div className="project-info">
@@ -34,16 +41,21 @@ export default function ProjectCard({
           className="project-slug"
         >
           <h3>
-            {" "}
-            <span className="project-number">#{index + 1}</span>&nbsp;
-            {project.title} &nbsp;
-            <BsBoxArrowInUpRight className="goto project-number" />
+            {showNumbering && (
+              <span className="project-number">#{index + 1}</span>
+            )}
+            &nbsp;
+            {project.title}
+            &nbsp;
+            {showNumbering && (
+              <BsBoxArrowInUpRight className="goto project-number" />
+            )}
           </h3>
         </Link>
 
-        <p className="project-desc">
+        {/* <p className="project-desc">
           {project.description.slice(0, 85) + "..."}
-        </p>
+        </p> */}
 
         <div className="project-stack">
           {project.technologies.map((techno) => (

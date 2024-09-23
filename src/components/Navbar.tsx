@@ -1,8 +1,9 @@
-import fullStackLogo from "./../assets/images/full_stack_logo.svg";
+// import fullStackLogo from "./../assets/images/full_stack_logo.svg";
 import { FaAlignJustify } from "react-icons/fa";
 import { page_links } from "../constants";
 import Link from "next/link";
-import Image from "next/image";
+// import Image from "next/image";
+import { VscCode } from "react-icons/vsc";
 
 export default function Navbar(props: TypeNavbar) {
   //-----
@@ -35,19 +36,11 @@ export default function Navbar(props: TypeNavbar) {
   };
 
   return (
-    <nav
-      className="navbar"
-      onMouseOver={(event) => hideSubMenu(event)}
-      style={{ border: "1px dashed green" }}
-    >
+    <nav className="navbar" onMouseOver={(event) => hideSubMenu(event)}>
       <div className="nav-center">
         <div className="nav-header">
           <Link href="/">
-            <Image
-              src={fullStackLogo as never as string}
-              alt="fullStack Web Developer"
-              className="logo"
-            />
+            <VscCode className="web-logo" />
           </Link>
           <button
             type="button"

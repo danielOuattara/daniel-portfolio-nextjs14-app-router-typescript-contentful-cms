@@ -8,7 +8,7 @@ export default function NotFound() {
         <h1>404</h1>
         <h3>page not found 😔</h3>
         <p style={paragraphStyles}>
-          Sorry, we couldn’t find what you were looking for.
+          Sorry, we could not find what you were looking for.
           <br />
           {process.env.NODE_ENV === "development" ? (
             <>
