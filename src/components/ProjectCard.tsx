@@ -35,9 +35,6 @@ export default function ProjectCard({
       <div className="project-info">
         <Link
           href={`/projects/${slugger(project.category)}/${project.slug}`}
-          // href={`/projects/${slugger(project.category)}/${slugger(
-          //   project.title,
-          // )}`}
           className="project-slug"
         >
           <h3>

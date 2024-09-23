@@ -28,7 +28,11 @@ export default async function AllProjectsPage() {
   return (
     <main>
       <section className="projects-page">
-        <ProjectCardList title="all projects" projects={allProjects} />
+        <ProjectCardList
+          title="all projects"
+          projects={allProjects}
+          showNumbering={true}
+        />
       </section>
     </main>
   );

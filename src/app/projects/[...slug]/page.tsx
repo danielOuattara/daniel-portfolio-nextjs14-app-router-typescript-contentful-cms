@@ -55,6 +55,7 @@ export default async function ParamsPage({ params }: Params) {
             <ProjectCardList
               title={`${categorySlug} projects`}
               projects={projectsByCategory}
+              showNumbering={false}
             />
           </section>
         </main>

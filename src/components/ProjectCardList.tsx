@@ -37,7 +37,7 @@ export default function ProjectCardList({
 
       {showLinkToProjects && (
         <Link href="/projects" className="btn center-btn">
-          go to projects
+          projects
         </Link>
       )}
     </section>
