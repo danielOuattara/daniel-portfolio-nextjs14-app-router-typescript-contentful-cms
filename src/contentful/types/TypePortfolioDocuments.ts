@@ -20,6 +20,7 @@ export type TypePortfolioDocumentsSkeleton = EntrySkeletonType<
   TypePortfolioDocumentsFields,
   "portfolioDocuments"
 >;
+
 export type TypePortfolioDocuments<
   Modifiers extends ChainModifiers,
   Locales extends LocaleCode = LocaleCode,

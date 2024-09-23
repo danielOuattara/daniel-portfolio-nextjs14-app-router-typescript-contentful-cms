@@ -5,7 +5,7 @@
 import { TypePortfolioProjectsSkeleton } from "./types";
 import { Entry } from "contentful";
 import { Document as RichTextDocument } from "@contentful/rich-text-types";
-import contentfulClient from "./contentfulClients";
+import contentfulClient from "./contentfulClient";
 import { IContentImage, parseContentfulContentImage } from "./contentImage";
 
 type TypeProjectEntry = Entry<TypePortfolioProjectsSkeleton, undefined, string>;
@@ -55,11 +55,11 @@ export function parseContentfulProject(
 }
 
 /**-------------------------------------------------------------------------------
- * A function to fetch projects.
+ * A function to fetch all the projects.
  * Optionally it uses the Contentful content preview.
  */
 
-interface IFetchProjects {
+interface IFetchProjectsOptions {
   preview?: boolean;
   featured?: boolean;
   category?: "backend" | "frontend" | "fullstack" | "mobile";
@@ -69,7 +69,7 @@ export async function fetchProjects({
   preview,
   featured,
   category,
-}: IFetchProjects): Promise<IProject[]> {
+}: IFetchProjectsOptions): Promise<IProject[]> {
   const client = contentfulClient({ preview });
 
   const rawProjectsResult =
@@ -92,7 +92,7 @@ export async function fetchProjects({
  * A function to fetch a single project by its title or slug.
  * Optionally uses the Contentful content preview.
  */
-interface IFetchSingleProject {
+interface IFetchSingleProjectOptions {
   preview: boolean;
   title?: string;
   slug?: string;
@@ -102,7 +102,7 @@ export async function fetchSingleProject({
   preview,
   title,
   slug,
-}: IFetchSingleProject): Promise<IProject | null> {
+}: IFetchSingleProjectOptions): Promise<IProject | null> {
   const client = contentfulClient({ preview });
 
   const rawProjectResult =

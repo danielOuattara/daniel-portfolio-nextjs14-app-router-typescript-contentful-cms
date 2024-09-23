@@ -1,7 +1,7 @@
 import { TypePortfolioDocumentsSkeleton } from "./types";
 import { Entry } from "contentful";
 import { Document as RichTextDocument } from "@contentful/rich-text-types";
-import contentfulClient from "./contentfulClients";
+import contentfulClient from "./contentfulClient";
 import { IContentImage, parseContentfulContentImage } from "./contentImage";
 import { parseContentfulProject } from "./portfolioProjects";
 
@@ -10,17 +10,6 @@ type TypeDocumentEntry = Entry<
   undefined,
   string
 >;
-
-/* 
-    title: EntryFieldTypes.Symbol;
-    slug: EntryFieldTypes.Symbol;
-    category: EntryFieldTypes.Symbol<"certificates" | "diplomas">;
-    verification_url: EntryFieldTypes.Symbol;
-    origin: EntryFieldTypes.Symbol;
-    date: EntryFieldTypes.Date;
-    image: EntryFieldTypes.AssetLink;
-
-*/
 
 /**-------------------------------------------------------------------------------
  * A simplified version of document interface:
@@ -39,7 +28,7 @@ export interface IDocument {
 
 /**-------------------------------------------------------------------------------
  * A function to transform a Contentful document
- * into a document that matches our interface IDocument.
+ * into a document that matches our interface 'IDocument'.
  */
 
 export function parseContentfulDocument(
@@ -57,11 +46,11 @@ export function parseContentfulDocument(
 }
 
 /**-------------------------------------------------------------------------------
- * A function to fetch documents.
+ * A function to fetch all the documents.
  * Optionally it uses the Contentful content preview.
  */
 
-interface IFetchDocuments {
+interface IFetchDocumentsOptions {
   preview: boolean;
   category?: "certificates" | "diplomas";
 }
@@ -69,14 +58,14 @@ interface IFetchDocuments {
 export async function fetchDocuments({
   preview,
   category,
-}: IFetchDocuments): Promise<IDocument[]> {
+}: IFetchDocumentsOptions): Promise<IDocument[]> {
   const contentful = contentfulClient({ preview });
 
   const rawDocumentsResult =
     await contentful.getEntries<TypePortfolioDocumentsSkeleton>({
       content_type: "portfolioDocuments",
       include: 2,
-      order: ["-fields.title"],
+      order: ["-fields.date"],
       "fields.category": category,
     });
 
@@ -90,7 +79,7 @@ export async function fetchDocuments({
  * Optionally uses the Contentful content preview.
  */
 
-interface IFetchSingleDocument {
+interface IFetchSingleDocumentOptions {
   preview: boolean;
   title?: string;
   slug?: string;
@@ -100,15 +89,15 @@ export async function fetchSingleDocument({
   preview,
   title,
   slug,
-}: IFetchSingleDocument): Promise<IDocument> {
+}: IFetchSingleDocumentOptions): Promise<IDocument> {
   const contentful = contentfulClient({ preview });
 
   const rawDocumentResult =
     await contentful.getEntries<TypePortfolioDocumentsSkeleton>({
       content_type: "portfolioDocuments",
+      include: 2,
       "fields.title": title ?? "",
       "fields.slug": slug ?? "",
-      include: 2,
     });
 
   return parseContentfulDocument(rawDocumentResult.items[0]) as IDocument;
