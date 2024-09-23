@@ -944,9 +944,9 @@ Projects
   transition: var(--transition);
 } */
 
-.project:hover .project-img::after {
+/* .project:hover .project-img::after {
   opacity: 0;
-}
+} */
 
 .project-info {
   background: var(--clr-white);
