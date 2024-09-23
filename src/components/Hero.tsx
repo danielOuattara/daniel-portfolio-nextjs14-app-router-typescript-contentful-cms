@@ -9,9 +9,9 @@ export default function Hero() {
       <section className="section-center hero-center">
         <article className="hero-info">
           <div className="hero-card">
-            <h1>I am Daniel </h1>
+            <h1>I am Daniel, </h1>
             <div className="underline"></div>
-            <p> your fullstack developer: web & mobile</p>
+            <p> your Fullstack Developer: Web & Mobile</p>
             <Link href={"/contact"} className="btn">
               Contact
             </Link>
