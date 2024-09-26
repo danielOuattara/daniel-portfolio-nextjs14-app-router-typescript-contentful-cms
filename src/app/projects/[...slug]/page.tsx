@@ -15,6 +15,8 @@ type Params = {
   };
 };
 
+type CategorySlugType = "backend" | "frontend" | "fullstack" | "mobile";
+
 export default async function ParamsPage({ params }: Params) {
   const isDraftMode = draftMode().isEnabled;
   const [categorySlug, projectNameSlug] = params.slug;
@@ -38,11 +40,7 @@ export default async function ParamsPage({ params }: Params) {
       // Fetch & render all projects by category
       const projectsByCategory = await fetchProjects({
         preview: isDraftMode,
-        category: categorySlug as
-          | "backend"
-          | "frontend"
-          | "fullstack"
-          | "mobile",
+        category: categorySlug as CategorySlugType,
       });
 
       if (projectsByCategory.length === 0) {
