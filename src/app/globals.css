@@ -38,6 +38,7 @@ Variables
   --clr-red-light: hsl(360, 71%, 66%);
   --clr-white: #fff;
   --ff-primary: "Roboto", sans-serif;
+
   --ff-secondary: "Open Sans", sans-serif;
   --transition: all 0.3s linear;
   --spacing: 0.1rem;
@@ -195,7 +196,7 @@ p {
 }
 
 .underline {
-  width: 30%;
+  width: 7rem;
   height: 0.12rem;
   margin: 1rem auto;
   background: var(--clr-primary-3);
@@ -207,7 +208,7 @@ p {
 }
 
 .section-title h2 {
-  color: var(--clr-gre4);
+  color: var(--clr-primary-2);
 }
 
 .bg-grey {
@@ -246,11 +247,51 @@ p {
   }
 }
 
-/*
-=============== 
-Navbar
-===============
-*/
+/* Loaders */
+
+.loader-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.loader {
+  /* flex-grow: 2; */
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 4px solid var(--clr-primary-7);
+  border-right: 4px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border-left: 4px solid var(--clr-primary-3);
+  border-bottom: 4px solid transparent;
+  animation: rotation 0.5s linear infinite reverse;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Navbar */
 
 .navbar {
   position: absolute;
@@ -434,11 +475,7 @@ Navbar
   }
 }
 
-/*
-=============== 
-Sidebar
-===============
-*/
+/* Sidebar */
 .sidebar {
   background: var(--clr-grey-10);
   position: fixed;
@@ -533,11 +570,7 @@ Sidebar
   }
 }
 
-/*
-=============== 
-Sidebar Animation
-===============
-*/
+/* Sidebar Animation */
 .sidebar-links li {
   animation: slideRight 0.45s ease-in-out 0.3s forwards;
 }
@@ -623,11 +656,7 @@ Sidebar Animation
   }
 }
 
-/*
-=============== 
-Hero
-===============
-*/
+/* Hero */
 /* underline added to globals */
 .hero {
   margin-top: -5rem;
@@ -650,9 +679,9 @@ Hero
 
 .hero-card h1 {
   color: var(--clr-primary-3);
-  font-family: var(--ff-secondary);
-  margin-top: 4rem;
+  margin: 2rem auto 1rem;
   text-transform: none;
+  font-size: 4rem;
 }
 
 .hero-card p {
@@ -661,7 +690,7 @@ Hero
   line-height: 1.25;
   margin: 1.25rem auto;
   font-family: var(--ff-primary);
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: bold;
 }
 
@@ -681,8 +710,24 @@ Hero
 .hero .btn {
   margin-top: 1.25rem;
 }
+@media screen and (min-width: 768px) {
+  .hero-card h1 {
+    font-size: 5rem;
+  }
+  .hero-card p {
+    font-size: 1.25rem;
+  }
+}
 
 @media screen and (min-width: 992px) {
+  .hero-card h1 {
+    font-size: 6rem;
+  }
+
+  .hero-card p {
+    font-size: 1.5rem;
+  }
+
   .hero::before {
     content: "";
     position: absolute;
@@ -695,10 +740,6 @@ Hero
 
   .hero-center {
     grid-template-columns: repeat(12, 1fr);
-  }
-
-  .hero h4 {
-    font-size: 0.85rem;
   }
 
   .hero-info {
@@ -734,11 +775,7 @@ Hero
   }
 }
 
-/*
-=============== 
-Services
-===============
-*/
+/* Services */
 .service {
   background: var(--clr-white);
   padding: 3rem 1.5rem;
@@ -793,11 +830,7 @@ Services
   }
 }
 
-/*
-=============== 
-Jobs
-===============
-*/
+/* Jobs */
 
 .jobs-center {
   width: 80vw;
@@ -902,11 +935,7 @@ Jobs
   }
 }
 
-/*
-=============== 
-Projects
-===============
-*/
+/* Projects */
 
 .projects-center {
   display: grid;
@@ -1072,11 +1101,7 @@ Projects
   }
 }
 
-/*
-===============
-Footer
-===============
-*/
+/* Footer */
 .footer {
   height: auto;
   padding: 3rem;
@@ -1109,11 +1134,7 @@ Footer
   color: var(--clr-primary-5);
 }
 
-/*
-===============
-Pages
-===============
-*/
+/* Pages */
 
 .project-template-page,
 .projects-page,
@@ -1137,11 +1158,7 @@ Pages
   margin-bottom: 2rem;
 }
 
-/*
-===============
-Project Template Page
-===============
-*/
+/* Project Template Page */
 .project-template-page {
   display: flex;
   flex-direction: column;
@@ -1172,11 +1189,7 @@ Project Template Page
   max-width: 36em;
 }
 
-/*
-===============
-About Page
-===============
-*/
+/* About Page */
 .about-page {
   padding: 7rem 0;
 }
@@ -1247,11 +1260,7 @@ About Page
   }
 }
 
-/*
-===============
-Contact Page
-===============
-*/
+/* Contact Page */
 .contact-page {
   display: grid;
   place-items: center;
