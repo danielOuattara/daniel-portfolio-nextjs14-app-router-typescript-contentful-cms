@@ -25,6 +25,10 @@ export default function DocumentCard({
         width={document.image?.width}
         height={document.image?.height}
         alt={document.title}
+        style={{
+          maxWidth: "100%",
+          height: "auto",
+        }}
       />
 
       <div className="project-info">
