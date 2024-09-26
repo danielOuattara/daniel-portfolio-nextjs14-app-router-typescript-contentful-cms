@@ -2,6 +2,12 @@ import Link from "next/link";
 import { social_links } from "@/constants";
 import Image from "next/image";
 import HeroImg from "./../assets/images/hero2.svg";
+import { Allura } from "next/font/google";
+
+const allura = Allura({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 export default function Hero() {
   return (
@@ -9,9 +15,9 @@ export default function Hero() {
       <section className="section-center hero-center">
         <article className="hero-info">
           <div className="hero-card">
-            <h1>I am Daniel, </h1>
+            <h1 className={allura.className}>I am Daniel, </h1>
             <div className="underline"></div>
-            <p> your Fullstack Developer: Web & Mobile</p>
+            <p> your Fullstack Developer, Web & Mobile</p>
             <Link href={"/contact"} className="btn">
               Contact
             </Link>
