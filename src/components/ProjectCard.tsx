@@ -17,10 +17,11 @@ export default function ProjectCard({
   project,
   showNumbering,
 }: TypeSingleProjectProps) {
+  console.log(`https:${project.featured_image?.src}`);
   return (
     <article className="project">
       <Image
-        src={`https://${project.featured_image?.src}`}
+        src={`https:${project.featured_image?.src}`}
         width={project.featured_image?.width}
         alt={project.title}
         height={project.featured_image?.height}

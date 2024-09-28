@@ -21,7 +21,7 @@ export default function DocumentCard({
     <article className="project">
       <Image
         className="project-img"
-        src={`https://${document.image?.src}`}
+        src={`https:${document.image?.src}`}
         width={document.image?.width}
         height={document.image?.height}
         alt={document.title}
