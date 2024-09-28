@@ -27,7 +27,6 @@ export default function ProjectCard({
         style={{
           maxWidth: "100%",
           height: "auto",
-          // objectFit: "cover",
         }}
         className="project-img"
       />
