@@ -30,7 +30,7 @@ export default function Submenu({
       className={isSubMenuOpen ? "submenu show" : "submenu"}
       ref={subMenuContainerRef}
       onMouseLeave={hideSubMenu}
-      style={{ border: "1px solid green" }}
+      style={{ border: "1px solid lightgrey" }}
     >
       <div className={` nav-subLinks submenu-center ${columns} `}>
         {subMenuPageToShow.subLinks.map((subLink, index) => {
