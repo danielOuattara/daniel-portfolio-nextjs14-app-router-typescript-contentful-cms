@@ -55,7 +55,7 @@ export default async function ParamsPage({ params }: Params) {
       <article className="project">
         <Image
           alt={singleDocument.title}
-          src={`https://${singleDocument.image?.src}`}
+          src={`https:${singleDocument.image?.src}`}
           className="project-img"
         />
 

@@ -13,11 +13,15 @@ export default function Project({
       <p>{singleProject.description}</p>
       <a href={singleProject.url_website} target="_blank" rel="noreferrer">
         <Image
-          src={`https://${singleProject.featured_image?.src}`}
+          src={`https:${singleProject.featured_image?.src}`}
           alt={singleProject.title}
           width={singleProject.featured_image?.width}
           height={singleProject.featured_image?.height}
           className="project-img"
+          style={{
+            maxWidth: "100%",
+            height: "auto",
+          }}
         />
       </a>
       <Link href="/projects" className="btn">
