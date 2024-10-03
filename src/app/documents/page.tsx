@@ -22,10 +22,10 @@ export default async function DocumentsPage() {
     <main>
       <section className="projects-page">
         <DocumentCardList
+          title={"All Documents"}
           documents={allDocuments}
           showLinkToDiploma={false}
           showItemNumber={false}
-          title={"All Documents"}
         />
       </section>
     </main>

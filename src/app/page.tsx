@@ -32,9 +32,9 @@ export default async function HomePage() {
       <Services />
       <ProjectCardList
         title="featured projects"
+        projects={featuredProjects}
         showLinkToProjects={true}
         showNumbering={false}
-        projects={featuredProjects}
       />
     </main>
   );
