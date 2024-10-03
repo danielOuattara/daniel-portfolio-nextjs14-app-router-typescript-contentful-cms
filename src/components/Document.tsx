@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { IDocument } from "@/contentful/portfolioDocuments";
+import { FaMedal } from "react-icons/fa6";
 
 export default function Document({
   singleDocument,
@@ -11,8 +12,8 @@ export default function Document({
     <main className="project-template-page">
       <h2>{singleDocument.category}</h2>
       <h3>{singleDocument.title}</h3>
-      <p>{singleDocument.date}</p>
-      <p>{singleDocument.origin}</p>
+      <p>Date: {singleDocument.date}</p>
+      <p>Origin: {singleDocument.origin}</p>
 
       {singleDocument.category === "certificates" && (
         <a
@@ -20,7 +21,9 @@ export default function Document({
           target="_blank"
           rel="noreferrer"
         >
-          Verify the certificate
+          <span className="span-verify">
+            Verify The Certificate <FaMedal />
+          </span>
         </a>
       )}
 
