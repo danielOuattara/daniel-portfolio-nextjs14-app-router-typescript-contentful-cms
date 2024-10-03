@@ -1153,8 +1153,8 @@ p {
 .documents-page .error-page,
 .about-page,
 .contact-page {
-  background: var(--clr-grey-10);
-  min-height: calc(100vh - 5rem - 9rem);
+  /* background: var(--clr-grey-10); */
+  /* min-height: calc(100vh - 5rem - 9rem); */
 }
 
 .error-page {
@@ -1170,38 +1170,65 @@ p {
   margin-bottom: 2rem;
 }
 
-/* Project Template Page */
+/*----- Project Template Page ------ */
+
 .project-template-page {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 5rem;
-  gap: 3rem;
-  text-align: center;
-  /* border: 5px solid yellow; */
+  width: 90vw;
+  margin: 0 auto;
+  text-align: justify;
 }
 
 .project-template-page h2 {
   text-transform: capitalize;
+  color: var(--clr-primary-2);
+  text-align: center;
+  margin: 2rem auto;
 }
 
-.project-template-page p {
-  max-width: 35em;
-  margin: 0 auto;
-  margin-top: 2rem;
-}
-
-.project-template-page a {
-  display: block;
-  margin: 0 auto;
+.project-template-page h3 {
+  text-transform: capitalize;
+  color: var(--clr-primary-2);
+  margin: 1.5rem auto;
 }
 
 .project-template-page img {
-  display: block;
-  max-width: 36em;
+  border: 1px solid lightgrey;
+  border-radius: var(--radius);
 }
 
-/* About Page */
+.span-verify {
+  display: inline-block;
+  font-weight: bold;
+  margin: 2rem;
+  color: var(--clr-primary-2);
+  font-size: 1.25rem;
+  text-decoration: underline;
+}
+
+.project-template-page p {
+  font-weight: bold;
+}
+
+.project-template-page a {
+  margin: 2rem auto;
+}
+
+.project-template-img-container {
+  margin-bottom: 1rem;
+}
+.project-template-img {
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (min-width: 868px) {
+  .project-template-page img {
+    width: 60%;
+    margin: 0 auto;
+  }
+}
+
+/*--------- About Page -------*/
 .about-page {
   padding: 7rem 0;
 }
