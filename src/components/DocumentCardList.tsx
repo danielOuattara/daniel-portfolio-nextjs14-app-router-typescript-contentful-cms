@@ -1,9 +1,14 @@
+/**
+ * This component renders indirectly many documents.
+ * It accepts 5 arguments and 2 sub components
+ * */
+
 import { Title, DocumentCard } from "@/components";
 import Link from "next/link";
 import Image from "next/image";
 import { IDocument } from "@/contentful/portfolioDocuments";
 
-type TypeDocumentsProps = {
+type TypeProps = {
   title: string;
   showLinkToCertificates?: boolean;
   showLinkToDiploma?: boolean;
@@ -17,12 +22,12 @@ export default function DocumentCardList({
   showItemNumber,
   showLinkToCertificates,
   showLinkToDiploma,
-}: TypeDocumentsProps) {
+}: TypeProps) {
   return (
-    <section className="section projects">
+    <section className="section documents">
       <Title title={title} />
 
-      <div className="section-center projects-center">
+      <div className="section-center documents-center">
         {documents.map((document, index) => (
           <DocumentCard
             key={document.slug}

@@ -1,6 +1,6 @@
 /**
  * This component renders indirectly many projects.
- * It accepts 3 arguments and 2 sub components
+ * It accepts 4 arguments and 2 sub components
  * */
 
 import { Title, ProjectCard } from "./index";
