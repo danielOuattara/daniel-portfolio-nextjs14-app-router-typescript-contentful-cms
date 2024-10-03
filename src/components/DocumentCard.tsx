@@ -19,7 +19,10 @@ export default function DocumentCard({
 }: TypeSingleDocumentProps) {
   return (
     <article className="project">
-      <div className="document-img-wrapper">
+      <Link
+        href={`/documents/${slugger(document.category)}/${document.slug}`}
+        className="document-img-wrapper"
+      >
         <Image
           src={`https:${document.image?.src}`}
           alt={document.title}
@@ -32,11 +35,11 @@ export default function DocumentCard({
             height: "100%",
           }}
         />
-      </div>
+      </Link>
 
       <div className="document-info">
         <Link
-          href={`/documents/${slugger(document.title)}`}
+          href={`/documents/${slugger(document.category)}/${document.slug}`}
           className="project-slug"
         >
           <h3>
