@@ -8,6 +8,7 @@ import {
 } from "@/contentful/portfolioProjects";
 import { Project, ProjectCardList } from "@/components";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 
 type Params = {
   params: {
@@ -56,6 +57,9 @@ export default async function ParamsPage({ params }: Params) {
               showNumbering={false}
             />
           </section>
+          {/* <Link href="/projects" className="btn">
+            &lt; back to projects
+          </Link> */}
         </main>
       );
     } else {
