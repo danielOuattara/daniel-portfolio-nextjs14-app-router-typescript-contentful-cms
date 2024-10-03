@@ -19,19 +19,22 @@ export default function DocumentCard({
 }: TypeSingleDocumentProps) {
   return (
     <article className="project">
-      <Image
-        className="project-img"
-        src={`https:${document.image?.src}`}
-        width={document.image?.width}
-        height={document.image?.height}
-        alt={document.title}
-        style={{
-          maxWidth: "100%",
-          height: "auto",
-        }}
-      />
+      <div className="document-img-wrapper">
+        <Image
+          src={`https:${document.image?.src}`}
+          alt={document.title}
+          className="document-img"
+          width={400}
+          height={300}
+          style={{
+            objectFit: "cover",
+            width: "100%",
+            height: "100%",
+          }}
+        />
+      </div>
 
-      <div className="project-info">
+      <div className="document-info">
         <Link
           href={`/documents/${slugger(document.title)}`}
           className="project-slug"
