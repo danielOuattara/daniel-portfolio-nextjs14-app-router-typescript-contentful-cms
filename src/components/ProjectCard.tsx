@@ -43,11 +43,10 @@ export default function ProjectCard({
           className="project-slug"
         >
           <h3>
-            {showNumbering && (
+            {/* {showNumbering && (
               <span className="project-number">#{index + 1}</span>
-            )}
-            &nbsp;
-            {project.title}
+            )} */}
+            #&nbsp;{project.title}
             &nbsp;
             {showNumbering && (
               <BsBoxArrowInUpRight className="goto project-number" />
