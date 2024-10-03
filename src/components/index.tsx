@@ -1,3 +1,4 @@
+export { default as Document } from "./Document";
 export { default as DocumentCard } from "./DocumentCard";
 export { default as DocumentCardList } from "./DocumentCardList";
 export { default as Footer } from "./Footer";
@@ -5,9 +6,9 @@ export { default as Hero } from "./Hero";
 export { default as Jobs } from "./Jobs";
 export { default as Layout } from "./Layout";
 export { default as Navbar } from "./Navbar";
+export { default as Project } from "./Project";
 export { default as ProjectCard } from "./ProjectCard";
 export { default as ProjectCardList } from "./ProjectCardList";
-export { default as Project } from "./Project";
 export { default as Services } from "./Services";
 export { default as Sidebar } from "./Sidebar";
 export { default as Submenu } from "./Submenu";
