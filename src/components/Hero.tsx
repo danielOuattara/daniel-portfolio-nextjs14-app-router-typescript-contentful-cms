@@ -17,7 +17,7 @@ export default function Hero() {
           <div className="hero-card">
             <h1 className={allura.className}>I am Daniel, </h1>
             <div className="underline"></div>
-            <p> your Fullstack Developer, Web & Mobile</p>
+            <p> your Fullstack Developer, Web & Mobile.</p>
             <Link href={"/contact"} className="btn">
               Contact
             </Link>
