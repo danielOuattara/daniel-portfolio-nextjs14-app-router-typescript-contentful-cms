@@ -17,20 +17,22 @@ export default function ProjectCard({
   project,
   showNumbering,
 }: TypeSingleProjectProps) {
-  console.log(`https:${project.featured_image?.src}`);
   return (
     <article className="project">
-      <Image
-        src={`https:${project.featured_image?.src}`}
-        width={project.featured_image?.width}
-        alt={project.title}
-        height={project.featured_image?.height}
-        style={{
-          maxWidth: "100%",
-          height: "auto",
-        }}
-        className="project-img"
-      />
+      <div className="project-img-wrapper">
+        <Image
+          src={`https:${project.featured_image?.src}`}
+          alt={project.title}
+          className="project-img"
+          width={400}
+          height={300}
+          style={{
+            objectFit: "cover",
+            width: "100%",
+            height: "100%",
+          }}
+        />
+      </div>
 
       <div className="project-info">
         <Link
@@ -50,12 +52,12 @@ export default function ProjectCard({
           </h3>
         </Link>
 
-        {/* <p className="project-desc">
+        <p className="project-desc">
           {project.description.slice(0, 85) + "..."}
-        </p> */}
+        </p>
 
         <div className="project-stack">
-          {project.technologies.map((techno) => (
+          {project.technologies.slice(0, 4).map((techno) => (
             <span key={techno}>{techno}</span>
           ))}
         </div>
