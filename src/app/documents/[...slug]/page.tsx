@@ -2,8 +2,6 @@
 //slug[1] = document name slugged
 
 import { draftMode } from "next/headers";
-import Link from "next/link";
-import Image from "next/image";
 import {
   fetchDocuments,
   fetchSingleDocument,
@@ -38,6 +36,7 @@ export default async function ParamsPage({ params }: Params) {
     }
 
     if (categorySlug) {
+      // Fetch & render all documents by category
       const allProjectsByCategory = await fetchDocuments({
         preview: isDraftMode,
         category: categorySlug as "certificates" | "diplomas",
