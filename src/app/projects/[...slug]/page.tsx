@@ -23,7 +23,7 @@ export default async function ParamsPage({ params }: Params) {
 
   try {
     if (categorySlug && projectNameSlug) {
-      // Fetch & render a single project for a category
+      // Fetch & render a single project from a category
       const singleProject = await fetchSingleProject({
         preview: isDraftMode,
         slug: projectNameSlug,
