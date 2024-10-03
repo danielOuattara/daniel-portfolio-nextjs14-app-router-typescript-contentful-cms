@@ -1176,6 +1176,7 @@ p {
   width: 90vw;
   margin: 0 auto;
   text-align: justify;
+  max-width: 1024px;
 }
 
 .project-template-page h2 {
