@@ -19,7 +19,10 @@ export default function ProjectCard({
 }: TypeSingleProjectProps) {
   return (
     <article className="project">
-      <div className="project-img-wrapper">
+      <Link
+        href={`/projects/${slugger(project.category)}/${project.slug}`}
+        className="project-img-wrapper"
+      >
         <Image
           src={`https:${project.featured_image?.src}`}
           alt={project.title}
@@ -32,7 +35,7 @@ export default function ProjectCard({
             height: "100%",
           }}
         />
-      </div>
+      </Link>
 
       <div className="project-info">
         <Link
