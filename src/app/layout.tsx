@@ -28,7 +28,8 @@ export const metadata = {
     card: "summary_large_image", // 'summary', 'summary_large_image', etc.
     title: "Daniel's Portfolio, FullStack Developer",
     description: "A brief description of your site",
-    images: ["https://yourwebsite.com/twitter-image.jpg"], // Twitter-specific image
+    // images: ["https://yourwebsite.com/twitter-image.jpg"], // Twitter-specific image
+    images: ["https://daniel-portfolio-next-ts-contentful.vercel.app/home.png"], // Twitter-specific image
   },
 };
 
