@@ -1,10 +1,10 @@
 "use client";
 
-import { BsStack } from "react-icons/bs";
 import { page_links } from "../constants";
 import Link from "next/link";
-import { VscCode } from "react-icons/vsc";
 import { usePathname } from "next/navigation";
+import { VscCode } from "react-icons/vsc";
+import { BsStack } from "react-icons/bs";
 
 export default function Navbar(props: TypeNavbar) {
   //-----
@@ -49,6 +49,7 @@ export default function Navbar(props: TypeNavbar) {
             type="button"
             className="toggle-btn"
             onClick={props.toggleSidebar}
+            aria-label="logo button navigate to home "
           >
             <BsStack />
           </button>
@@ -63,6 +64,7 @@ export default function Navbar(props: TypeNavbar) {
                 ${pathname === link.url ? "active-link" : ""} `}
               onMouseOver={(event) => link.subLinks && displaySubMenu(event)}
               onClick={() => props.setIsSubMenuOpen(false)}
+              aria-label="navigation button"
             >
               {link.page}
             </Link>
