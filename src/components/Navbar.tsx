@@ -1,6 +1,6 @@
 "use client";
 
-import { FaAlignJustify } from "react-icons/fa";
+import { BsStack } from "react-icons/bs";
 import { page_links } from "../constants";
 import Link from "next/link";
 import { VscCode } from "react-icons/vsc";
@@ -50,7 +50,7 @@ export default function Navbar(props: TypeNavbar) {
             className="toggle-btn"
             onClick={props.toggleSidebar}
           >
-            <FaAlignJustify />
+            <BsStack />
           </button>
         </div>
         <div className="nav-links">
