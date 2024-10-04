@@ -1,11 +1,14 @@
-// import fullStackLogo from "./../assets/images/full_stack_logo.svg";
+"use client";
+
 import { FaAlignJustify } from "react-icons/fa";
 import { page_links } from "../constants";
 import Link from "next/link";
-// import Image from "next/image";
 import { VscCode } from "react-icons/vsc";
+import { usePathname } from "next/navigation";
 
 export default function Navbar(props: TypeNavbar) {
+  //-----
+  const pathname = usePathname();
   //-----
   const displaySubMenu = (event: React.MouseEvent<HTMLElement>) => {
     const targetElement = event.target as HTMLElement; // Type assertion
@@ -55,7 +58,9 @@ export default function Navbar(props: TypeNavbar) {
             <Link
               key={link.id}
               href={link.url}
-              className={link.subLinks ? "link-btn has-subLinks" : "link-btn"}
+              className={` 
+                ${link.subLinks ? "link-btn has-subLinks" : "link-btn"} 
+                ${pathname === link.url ? "active-link" : ""} `}
               onMouseOver={(event) => link.subLinks && displaySubMenu(event)}
               onClick={() => props.setIsSubMenuOpen(false)}
             >

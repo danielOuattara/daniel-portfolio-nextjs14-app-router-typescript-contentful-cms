@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Submenu({
   isSubMenuOpen,
@@ -11,6 +12,9 @@ export default function Submenu({
 }: TypeSubmenu) {
   const [columns, setColumns] = useState("");
   const subMenuContainerRef = useRef<HTMLElement | null>(null);
+  const pathname = usePathname();
+
+  console.log(pathname);
 
   useEffect(() => {
     subMenuPageToShow.subLinks.length <= 3
@@ -38,7 +42,11 @@ export default function Submenu({
             <Link
               key={index}
               href={subLink.url}
-              className="link-btn"
+              className={`${
+                pathname === subLink.url
+                  ? "active-subLink link-btn"
+                  : "link-btn"
+              } `}
               onClick={() => setIsSubMenuOpen(false)}
             >
               {subLink.page}

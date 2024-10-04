@@ -1,8 +1,12 @@
+"use client";
+
 import { page_links, social_links } from "../constants";
 import Link from "next/link";
 import { FaTimes } from "react-icons/fa";
+import { usePathname } from "next/navigation";
 
 export default function Sidebar({ isSidebarOpen, toggleSidebar }: TypeSideBar) {
+  const pathname = usePathname();
   return (
     <aside className={isSidebarOpen ? "sidebar show-sidebar" : "sidebar"}>
       <button className="close-btn" type="button" onClick={toggleSidebar}>
@@ -14,7 +18,16 @@ export default function Sidebar({ isSidebarOpen, toggleSidebar }: TypeSideBar) {
           {page_links.map((link) => {
             return (
               <li key={link.id}>
-                <Link href={link.url} onClick={toggleSidebar}>
+                <Link
+                  href={link.url}
+                  onClick={toggleSidebar}
+                  className={` ${
+                    pathname === link.url ||
+                    pathname.split("/").includes(link.url)
+                      ? "sidebar-active-link"
+                      : ""
+                  } `}
+                >
                   {link.page}
                 </Link>
                 {link.subLinks && (
@@ -22,7 +35,15 @@ export default function Sidebar({ isSidebarOpen, toggleSidebar }: TypeSideBar) {
                     {link.subLinks.map((subLink) => {
                       return (
                         <li key={subLink.id}>
-                          <Link href={subLink.url} onClick={toggleSidebar}>
+                          <Link
+                            href={subLink.url}
+                            onClick={toggleSidebar}
+                            className={` ${
+                              pathname === subLink.url
+                                ? "sidebar-active-subLink"
+                                : ""
+                            } `}
+                          >
                             {subLink.page}
                           </Link>
                         </li>
