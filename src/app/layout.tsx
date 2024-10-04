@@ -16,7 +16,7 @@ export const metadata = {
     siteName: "daniel's portfolio",
     images: [
       {
-        url: "https://daniel-portfolio-next-ts-contentful.vercel.app/home.png", // Image for Open Graph previews
+        url: "https://daniel-portfolio-next-ts-contentful.vercel.app/home-2.png", // Image for Open Graph previews
         width: 1200,
         height: 630,
         alt: "image showing website home page",
@@ -31,7 +31,9 @@ export const metadata = {
     description:
       "This website is a portfolio where I present my skills as a fullstack web development. One can find many of the projects or websites I created sometimes from scratch and sometimes from existing projects/websites that I updated to feat my needs and my requirements",
     // images: ["https://yourwebsite.com/twitter-image.jpg"], // Twitter-specific image
-    images: ["https://daniel-portfolio-next-ts-contentful.vercel.app/home.png"], // Twitter-specific image
+    images: [
+      "https://daniel-portfolio-next-ts-contentful.vercel.app/home-2.png",
+    ], // Twitter-specific image
   },
 };
 
