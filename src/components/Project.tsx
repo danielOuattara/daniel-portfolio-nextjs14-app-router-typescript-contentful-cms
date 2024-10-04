@@ -41,7 +41,12 @@ export default function Project({
         <Link href={`/projects/${singleProject.category}`} className="btn">
           &lt; back
         </Link>
-        <a href={singleProject.url_github} target="_blank" rel="noreferrer">
+        <a
+          href={singleProject.url_github}
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Link to project website"
+        >
           <FaGithubSquare className="project-icon" />
         </a>
         <a href={singleProject.url_website} target="_blank" rel="noreferrer">

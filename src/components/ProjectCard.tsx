@@ -65,11 +65,21 @@ export default function ProjectCard({
         </div>
 
         <div className="project-links">
-          <a href={project.url_github} target="_blank" rel="noreferrer">
+          <a
+            href={project.url_github}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Link to github resource"
+          >
             <FaGithubSquare className="project-icon" />
           </a>
 
-          <a href={project.url_website} target="_blank" rel="noreferrer">
+          <a
+            href={project.url_website}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Link to project website"
+          >
             <HiAtSymbol className="project-icon" />
           </a>
         </div>

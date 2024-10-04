@@ -12,6 +12,7 @@ export default function Footer() {
               className="social-link"
               target="_blank"
               rel="noreferrer"
+              aria-label="Social Network Link"
             >
               {link.icon}
             </a>
@@ -27,6 +28,7 @@ export default function Footer() {
             href="https://github.com/danielOuattara/daniel-portfolio-nextjs14-app-router-typescript-contentful-cms"
             target="_blank"
             rel="noreferrer"
+            aria-label="Link to email"
           >
             Github Source
           </a>

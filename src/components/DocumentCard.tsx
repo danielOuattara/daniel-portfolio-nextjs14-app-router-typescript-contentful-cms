@@ -50,26 +50,6 @@ export default function DocumentCard({
             <BsBoxArrowInUpRight className="goto project-number" />
           </h3>
         </Link>
-
-        {/* <p className="project-desc">
-          {project.description.description.slice(0, 85) + "..."}
-        </p> */}
-
-        {/* <div className="project-stack">
-          {project.technologies.map((techno) => (
-            <span key={techno}>{techno}</span>
-          ))}
-        </div> */}
-
-        {/* <div className="project-links">
-          <a href={project.url_github} target="_blank" rel="noreferrer">
-            <FaGithubSquare className="project-icon" />
-          </a>
-
-          <a href={project.url_website} target="_blank" rel="noreferrer">
-            <HiAtSymbol className="project-icon" />
-          </a>
-        </div> */}
       </div>
     </article>
   );
