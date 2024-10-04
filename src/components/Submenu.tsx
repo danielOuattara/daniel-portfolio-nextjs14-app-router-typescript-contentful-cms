@@ -14,8 +14,6 @@ export default function Submenu({
   const subMenuContainerRef = useRef<HTMLElement | null>(null);
   const pathname = usePathname();
 
-  console.log(pathname);
-
   useEffect(() => {
     subMenuPageToShow.subLinks.length <= 3
       ? setColumns("col-2")
