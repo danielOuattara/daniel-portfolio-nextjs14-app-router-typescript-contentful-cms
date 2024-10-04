@@ -483,23 +483,31 @@ p {
 }
 
 /* Sidebar */
-.sidebar {
-  background: var(--clr-grey-10);
+.sidebar-overlay {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 98; /* Make sure it's behind the sidebar */
+  transition: var(--transition);
+}
+.sidebar {
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 70%;
   height: auto;
   z-index: 99;
-  display: grid;
-  /* place-items: center; */
   opacity: 0;
   transition: var(--transition);
   transform: translateX(-100%);
 }
 
 .side-container {
-  margin: 4rem 1rem 1rem 2rem;
+  margin: 3rem 1rem 1rem 1rem;
   /* background: var(--clr-white); */
   border-radius: var(--radius);
 }
@@ -507,6 +515,11 @@ p {
 .show-sidebar {
   opacity: 1;
   transform: translateX(0);
+}
+
+.sidebar-icon {
+  margin-right: 1rem;
+  /* font-size: 1rem; */
 }
 
 .sidebar-links li {
@@ -519,11 +532,10 @@ p {
   font-weight: normal;
   color: var(--clr-primary-2);
   letter-spacing: var(--spacing);
-  margin: 0.35rem;
-  padding: 0.35rem;
+  padding: 0.25rem;
   /* border-bottom-width: 1px; */
   border-bottom: 1px dotted rgb(221, 221, 221);
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   transition: var(--transition);
   border-radius: var(--radius);
   background-color: #fff;
@@ -535,24 +547,17 @@ p {
 }
 
 .sidebar-subLinks {
-  list-style-type: square;
   color: #2caeba;
-  margin-left: 3rem;
-}
-
-.sidebar-subLinks li {
-  /* opacity: 0.3; */
-  /* border: 1px solid red; */
+  margin-left: 1.5rem;
 }
 
 .sidebar-subLinks li a {
   display: block;
-  /* text-transform: none; */
-  padding: 0.35rem;
+  padding: 0.25rem;
   color: var(--clr-grey-5);
   letter-spacing: var(--spacing);
   margin-left: 0.5rem;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   transition: var(--transition);
   border-radius: var(--radius);
 }
@@ -571,9 +576,9 @@ p {
 
 .close-btn {
   position: absolute;
-  right: 4.85%;
+  right: 5%;
   top: 2%;
-  font-size: 2.5rem;
+  font-size: 2rem;
   background: transparent;
   border-color: transparent;
   color: var(--clr-red-dark);
