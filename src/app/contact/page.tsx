@@ -1,7 +1,7 @@
 import { type Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact page",
+  title: "Contact page | Portfolio",
   description:
     "About page for Daniel portfolio where skills for fullstack wed development are presented as projects",
 };

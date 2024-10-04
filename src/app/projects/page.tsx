@@ -13,7 +13,7 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
 //------------------------
 
 export const metadata: Metadata = {
-  title: "Projects | Portfolio ",
+  title: "Projects page | Portfolio ",
   description:
     "Projects page for Daniel portfolio where one can find fullstack, frontend, backend and mobile projects, with link to hosted CDN",
 };
