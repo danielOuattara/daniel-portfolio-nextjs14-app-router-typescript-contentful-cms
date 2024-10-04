@@ -2,6 +2,13 @@ import { Title } from "@/components";
 import { siteMetadata } from "../../../siteMetadata";
 import Image from "next/image";
 import HeroImage from "./../../assets/images/about-me-image.svg";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About page",
+  description:
+    "About page for Daniel portfolio where skills for fullstack wed development are presented as projects",
+};
 
 export default function AboutPage() {
   return (

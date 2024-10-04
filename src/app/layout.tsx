@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Julee } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { Layout } from "@/components";
 

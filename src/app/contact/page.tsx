@@ -1,3 +1,11 @@
+import { type Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact page",
+  description:
+    "About page for Daniel portfolio where skills for fullstack wed development are presented as projects",
+};
+
 export default function ContactPage() {
   return (
     <section className="contact-page">
