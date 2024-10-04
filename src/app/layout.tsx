@@ -18,7 +18,7 @@ export const metadata = {
         url: "https://daniel-portfolio-next-ts-contentful.vercel.app/home.png", // Image for Open Graph previews
         width: 1200,
         height: 630,
-        alt: "Your Image Alt Text",
+        alt: "image showing website home page",
       },
     ],
     locale: "en_US",
