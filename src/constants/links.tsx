@@ -1,13 +1,19 @@
-import { FaHome, FaInfoCircle, FaServer, FaMobileAlt } from "react-icons/fa";
+import {
+  FaHome,
+  FaInfoCircle,
+  FaServer,
+  FaMobileAlt,
+  FaEnvelopeOpenText,
+} from "react-icons/fa";
 import { GrProjects } from "react-icons/gr";
-import { FaSquareWebAwesome, FaMobileScreen } from "react-icons/fa6";
+import { FaSquareWebAwesome } from "react-icons/fa6";
 import { HiOutlineDesktopComputer } from "react-icons/hi";
 import { IoDocumentText } from "react-icons/io5";
 import { GiDiploma } from "react-icons/gi";
 import { PiCertificate } from "react-icons/pi";
 import { TbFileCv } from "react-icons/tb";
 import { FiPackage } from "react-icons/fi";
-import { MdConnectWithoutContact } from "react-icons/md";
+import { MdMarkEmailRead } from "react-icons/md";
 
 const page_links = [
   {
@@ -90,28 +96,8 @@ const page_links = [
     id: 5,
     page: "contact",
     url: "/contact",
-    icon: <MdConnectWithoutContact />,
+    icon: <FaEnvelopeOpenText />,
   },
 ];
 
-// const documents_sublinks = [
-//   {
-//     id: 6,
-//     text: "cv",
-//     url: "/cv/",
-//   },
-//   {
-//     id: 7,
-//     text: "certifications",
-//     url: "/certifications/",
-//   },
-//   {
-//     id: 7,
-//     text: "diploma",
-//     url: "/diploma/",
-//   },
-// ];
-export {
-  page_links,
-  // documents_sublinks
-};
+export { page_links };
