@@ -41,6 +41,7 @@ Variables
 
   --ff-secondary: "Open Sans", sans-serif;
   --transition: all 0.3s linear;
+  --transition-quick: all 0.2s linear;
   --spacing: 0.1rem;
   --radius: 0.25rem;
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -484,7 +485,6 @@ p {
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
   z-index: 98; /* Make sure it's behind the sidebar */
-  transition: var(--transition);
 }
 .sidebar {
   background-image: linear-gradient(
