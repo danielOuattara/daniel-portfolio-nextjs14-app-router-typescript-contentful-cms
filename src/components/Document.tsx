@@ -42,7 +42,7 @@ export default function Document({
         />
       </div>
       <Link href="/documents" className="btn">
-        back to documents
+        back
       </Link>
     </main>
   );
