@@ -1,5 +1,6 @@
 import { Title } from "@/components";
 import { services } from "@/constants";
+import Link from "next/link";
 
 export default function Services() {
   return (
@@ -15,6 +16,10 @@ export default function Services() {
           </article>
         ))}
       </div>
+
+      <Link href="/services" className="btn center-btn">
+        read more
+      </Link>
     </section>
   );
 }
