@@ -42,6 +42,8 @@ export default function Hero() {
           alt="portfolio"
           className="hero-img hero-img-svg"
           style={{ maxWidth: "100%", height: "auto" }}
+          priority
+          loading="eager"
         />
       </section>
     </header>

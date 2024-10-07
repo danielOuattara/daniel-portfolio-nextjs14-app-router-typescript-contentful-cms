@@ -40,6 +40,7 @@ export default function Submenu({
             <Link
               key={index}
               href={subLink.url}
+              ria-label={`navigation button to ${subLink.page}`}
               className={`${
                 pathname === subLink.url
                   ? "active-subLink link-btn"
