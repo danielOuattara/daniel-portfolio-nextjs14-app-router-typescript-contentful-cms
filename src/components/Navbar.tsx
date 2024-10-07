@@ -64,7 +64,7 @@ export default function Navbar(props: TypeNavbar) {
                 ${pathname === link.url ? "active-link" : ""} `}
               onMouseOver={(event) => link.subLinks && displaySubMenu(event)}
               onClick={() => props.setIsSubMenuOpen(false)}
-              aria-label="navigation button"
+              aria-label={`navigation button to ${link.page}`}
             >
               {link.page}
             </Link>

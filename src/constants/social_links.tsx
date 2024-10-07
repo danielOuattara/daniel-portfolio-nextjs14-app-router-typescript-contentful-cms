@@ -22,6 +22,7 @@ const social_links = [
     id: 2,
     icon: <FaLinkedin className="social-icon"></FaLinkedin>,
     url: "http://www.linkedin.com/in/daniel-b-ouattara-677146ab",
+    name: "LinkedIn",
   },
   // {
   //   id: 3,
@@ -37,16 +38,19 @@ const social_links = [
     id: 5,
     icon: <FaTwitterSquare className="social-icon"></FaTwitterSquare>,
     url: "http://www.linkedin.com/in/daniel-b-ouattara-677146ab",
+    name: "Twitter X",
   },
   {
     id: 6,
     icon: <FaMobileAlt className="social-icon"></FaMobileAlt>,
     url: "tel:+33762429711",
+    name: "mobile phone",
   },
   {
     id: 7,
     icon: <MdMarkEmailRead className="social-icon"></MdMarkEmailRead>,
     url: "mailto:daniel.ouattara@gmx.com",
+    name: "email",
   },
 ];
 

@@ -29,7 +29,7 @@ export default function Hero() {
                   className="social-link"
                   target="_blank"
                   rel="noreferrer"
-                  aria-label="Social Network Link"
+                  aria-label={`Link to ${link.name}`}
                 >
                   {link.icon}
                 </a>

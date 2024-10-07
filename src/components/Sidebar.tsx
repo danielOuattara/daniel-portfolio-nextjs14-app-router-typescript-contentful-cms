@@ -15,7 +15,12 @@ export default function Sidebar({ isSidebarOpen, toggleSidebar }: TypeSideBar) {
       )}
       {/* Sidebar */}
       <aside className={isSidebarOpen ? "sidebar show-sidebar" : "sidebar"}>
-        <button className="close-btn" type="button" onClick={toggleSidebar}>
+        <button
+          className="close-btn"
+          type="button"
+          onClick={toggleSidebar}
+          aria-label="button to close the sidebar navigation"
+        >
           <FaTimes />
         </button>
         <div className="side-container">

@@ -1183,6 +1183,14 @@ p {
   color: var(--clr-primary-5);
 }
 
+.footer .power-by {
+  color: var(--clr-primary-8);
+}
+
+.footer .github-link {
+  color: var(--clr-white);
+}
+
 /* Pages */
 
 .project-template-page,
