@@ -41,9 +41,15 @@ export default function Document({
           }}
         />
       </div>
-      <Link href="/documents" className="btn">
-        back
-      </Link>
+
+      <div className="document-btn-container">
+        <Link
+          href={`/documents/${singleDocument.category}/#${singleDocument.slug}`}
+          className="btn"
+        >
+          back
+        </Link>
+      </div>
     </main>
   );
 }

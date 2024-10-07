@@ -64,6 +64,10 @@ Global Styles
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--ff-secondary);
   background: var(--clr-white);
@@ -971,6 +975,19 @@ p {
 
 /* Projects & Documents */
 
+.document-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.document-btn-container {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  margin: 4rem auto;
+}
+
 .projects-center,
 .documents-center {
   display: grid;
@@ -1096,6 +1113,9 @@ p {
 }
 
 @media screen and (min-width: 768px) {
+  .document-btn-container {
+    flex-direction: row;
+  }
   .projects-center,
   .documents-center {
     grid-template-columns: 1fr 1fr;

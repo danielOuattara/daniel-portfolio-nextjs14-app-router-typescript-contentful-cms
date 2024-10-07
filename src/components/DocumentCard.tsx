@@ -18,7 +18,7 @@ export default function DocumentCard({
   showItemNumber,
 }: TypeSingleDocumentProps) {
   return (
-    <article className="project">
+    <article className="project" id={`${document.slug}`}>
       <Link
         href={`/documents/${slugger(document.category)}/${document.slug}`}
         className="document-img-wrapper"
@@ -29,6 +29,8 @@ export default function DocumentCard({
           className="document-img"
           width={400}
           height={300}
+          priority
+          loading="eager"
           style={{
             objectFit: "cover",
             width: "100%",
@@ -42,12 +44,19 @@ export default function DocumentCard({
           href={`/documents/${slugger(document.category)}/${document.slug}`}
           className="project-slug"
         >
-          <h3>
-            {showItemNumber && (
-              <span className="project-number">#{index + 1}</span>
-            )}
-            {document.title} &nbsp;
-            <BsBoxArrowInUpRight className="goto project-number" />
+          <h3 className="document-title">
+            <span>
+              {" "}
+              {showItemNumber && (
+                <span className="project-number">#{index + 1}</span>
+              )}
+            </span>
+            &nbsp;
+            <span>
+              {" "}
+              {document.title} &nbsp;
+              <BsBoxArrowInUpRight className="goto project-number" />
+            </span>
           </h3>
         </Link>
       </div>

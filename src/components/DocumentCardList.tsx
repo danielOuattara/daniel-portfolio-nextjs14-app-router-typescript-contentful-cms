@@ -1,6 +1,6 @@
 /**
  * This component renders indirectly many documents.
- * It accepts 5 arguments and 2 sub components
+ * It accepts 3 arguments and 2 sub components
  * */
 
 import { Title, DocumentCard } from "@/components";
@@ -10,18 +10,18 @@ import { IDocument } from "@/contentful/portfolioDocuments";
 
 type TypeProps = {
   title: string;
-  showLinkToCertificates?: boolean;
-  showLinkToDiploma?: boolean;
   showItemNumber?: boolean;
   documents: IDocument[];
+  certificates: boolean;
+  diplomas: boolean;
 };
 
 export default function DocumentCardList({
   title,
   documents,
   showItemNumber,
-  showLinkToCertificates,
-  showLinkToDiploma,
+  certificates,
+  diplomas,
 }: TypeProps) {
   return (
     <section className="section documents">
@@ -38,16 +38,24 @@ export default function DocumentCardList({
         ))}
       </div>
 
-      {showLinkToCertificates && (
-        <Link href="/documents/certificates" className="btn center-btn">
-          all certificates
+      <div className="document-btn-container">
+        {(certificates || diplomas) && (
+          <Link
+            href="/documents"
+            className="btn center-btn"
+            aria-label="navigate back to documents page"
+          >
+            go back
+          </Link>
+        )}
+        <Link
+          href={`#${title}`}
+          className="btn center-btn"
+          aria-label="navigate to the top of the page"
+        >
+          to the top
         </Link>
-      )}
-      {showLinkToDiploma && (
-        <Link href="/documents/diploma" className="btn center-btn">
-          all diploma
-        </Link>
-      )}
+      </div>
     </section>
   );
 }

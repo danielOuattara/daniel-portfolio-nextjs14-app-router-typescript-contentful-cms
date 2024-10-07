@@ -74,8 +74,8 @@ export default async function DocumentSlugPage({ params }: Params) {
             title={`${categorySlug}`}
             documents={allProjectsByCategory}
             showItemNumber={true}
-            showLinkToCertificates={categorySlug === "diplomas" ? true : false}
-            showLinkToDiploma={categorySlug === "certificates" ? true : false}
+            certificates={categorySlug === "certificates" ? true : false}
+            diplomas={categorySlug === "diplomas" ? true : false}
           />
         </section>
       </main>
