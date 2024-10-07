@@ -25,12 +25,13 @@ export default function Footer() {
         <p className="power-by">
           Powered using : Nextjs14 - Typescript - Contentful
         </p>
-        <p className="github-link">
+        <p>
           <a
             href="https://github.com/danielOuattara/daniel-portfolio-nextjs14-app-router-typescript-contentful-cms"
             target="_blank"
             rel="noreferrer"
             aria-label="Link to github"
+            className="github-link"
           >
             Github Source
           </a>

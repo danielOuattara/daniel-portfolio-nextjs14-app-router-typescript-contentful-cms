@@ -1180,15 +1180,15 @@ p {
 }
 
 .footer .social-link:hover {
-  color: var(--clr-primary-5);
+  color: var(--clr-primary-6);
 }
 
 .footer .power-by {
-  color: var(--clr-primary-8);
+  color: var(--clr-primary-7);
 }
 
-.footer .github-link {
-  color: var(--clr-white);
+.footer a.github-link {
+  color: var(--clr-primary-8);
 }
 
 /* Pages */

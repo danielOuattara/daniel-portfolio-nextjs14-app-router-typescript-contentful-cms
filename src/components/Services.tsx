@@ -18,7 +18,7 @@ export default function Services() {
       </div>
 
       <Link href="/services" className="btn center-btn">
-        read more
+        read more about best practices
       </Link>
     </section>
   );

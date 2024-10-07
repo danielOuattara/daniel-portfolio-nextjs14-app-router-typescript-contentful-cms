@@ -32,6 +32,7 @@ export default function Sidebar({ isSidebarOpen, toggleSidebar }: TypeSideBar) {
                   <Link
                     href={link.url}
                     onClick={toggleSidebar}
+                    aria-label={`navigation button to ${link.page}`}
                     className={` ${
                       pathname === link.url ||
                       pathname.split("/").includes(link.url)
@@ -50,6 +51,7 @@ export default function Sidebar({ isSidebarOpen, toggleSidebar }: TypeSideBar) {
                             <Link
                               href={subLink.url}
                               onClick={toggleSidebar}
+                              aria-label={`navigation button to ${subLink.page}`}
                               className={` ${
                                 pathname === subLink.url
                                   ? "sidebar-active-subLink"
