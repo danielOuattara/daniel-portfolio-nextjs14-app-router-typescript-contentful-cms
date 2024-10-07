@@ -15,12 +15,38 @@ type Params = {
   };
 };
 
-export default async function ParamsPage({ params }: Params) {
+type CategorySlugType = "certificates" | "diplomas";
+
+//------
+
+export async function generateStaticParams(): Promise<{ slug: string[] }[]> {
+  const categories: CategorySlugType[] = ["certificates", "diplomas"];
+
+  let paths: { slug: string[] }[] = [];
+
+  for (const category of categories) {
+    const documents = await fetchDocuments({ category });
+
+    documents.forEach((project) => {
+      paths.push({ slug: [category, project.slug] });
+    });
+  }
+
+  // Return array of objects with slug arrays
+  return paths;
+}
+
+//------
+
+export default async function DocumentSlugPage({ params }: Params) {
   const isDraftMode = draftMode().isEnabled;
-  // console.log(params);
   const [categorySlug, documentNameSlug] = params.slug;
 
   try {
+    if (!categorySlug) {
+      notFound();
+    }
+
     if (categorySlug && documentNameSlug) {
       // Fetch & render a single document from a category
       const singleDocument = await fetchSingleDocument({
@@ -35,29 +61,25 @@ export default async function ParamsPage({ params }: Params) {
       return <Document singleDocument={singleDocument} />;
     }
 
-    if (categorySlug) {
-      // Fetch & render all documents by category
-      const allProjectsByCategory = await fetchDocuments({
-        preview: isDraftMode,
-        category: categorySlug as "certificates" | "diplomas",
-      });
+    // Fetch & render all documents by category
+    const allProjectsByCategory = await fetchDocuments({
+      preview: isDraftMode,
+      category: categorySlug as "certificates" | "diplomas",
+    });
 
-      return (
-        <main>
-          <section className="documents-page">
-            <DocumentCardList
-              title={`${categorySlug}`}
-              documents={allProjectsByCategory}
-              showItemNumber={true}
-              showLinkToCertificates={
-                categorySlug === "diplomas" ? true : false
-              }
-              showLinkToDiploma={categorySlug === "certificates" ? true : false}
-            />
-          </section>
-        </main>
-      );
-    }
+    return (
+      <main>
+        <section className="documents-page">
+          <DocumentCardList
+            title={`${categorySlug}`}
+            documents={allProjectsByCategory}
+            showItemNumber={true}
+            showLinkToCertificates={categorySlug === "diplomas" ? true : false}
+            showLinkToDiploma={categorySlug === "certificates" ? true : false}
+          />
+        </section>
+      </main>
+    );
   } catch (error) {
     console.error("An error occurred:", error);
     notFound();

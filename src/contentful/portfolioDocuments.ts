@@ -51,7 +51,7 @@ export function parseContentfulDocument(
  */
 
 interface IFetchDocumentsOptions {
-  preview: boolean;
+  preview?: boolean;
   category?: "certificates" | "diplomas";
 }
 

@@ -5,13 +5,6 @@ import { draftMode } from "next/headers";
 
 //------------------------
 
-export async function generateStaticParams(): Promise<{ slug: string }[]> {
-  const allProjects = await fetchProjects({ preview: false });
-  return allProjects.map((post) => ({ slug: post.slug }));
-}
-
-//------------------------
-
 export const metadata: Metadata = {
   title: "Projects page | Portfolio ",
   description:

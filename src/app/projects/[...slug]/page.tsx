@@ -8,7 +8,6 @@ import {
 } from "@/contentful/portfolioProjects";
 import { Project, ProjectCardList } from "@/components";
 import { notFound } from "next/navigation";
-import Link from "next/link";
 
 type Params = {
   params: {
@@ -18,11 +17,43 @@ type Params = {
 
 type CategorySlugType = "backend" | "frontend" | "fullstack" | "mobile";
 
-export default async function ParamsPage({ params }: Params) {
+//----
+
+export async function generateStaticParams(): Promise<{ slug: string[] }[]> {
+  const categories: CategorySlugType[] = [
+    "backend",
+    "frontend",
+    "fullstack",
+    "mobile",
+  ];
+
+  let paths: { slug: string[] }[] = [];
+
+  for (const category of categories) {
+    const projects = await fetchProjects({ category });
+
+    projects.forEach((project) => {
+      paths.push({ slug: [category, project.slug] });
+    });
+  }
+
+  // Return array of objects with slug arrays
+  return paths;
+}
+
+//----
+
+export default async function ProjectSlugPage({ params }: Params) {
   const isDraftMode = draftMode().isEnabled;
-  const [categorySlug, projectNameSlug] = params.slug;
+
+  const slugArray = Array.isArray(params?.slug) ? params.slug : [params?.slug];
+  const [categorySlug, projectNameSlug] = slugArray;
 
   try {
+    if (!categorySlug) {
+      notFound();
+    }
+
     if (categorySlug && projectNameSlug) {
       // Fetch & render a single project from a category
       const singleProject = await fetchSingleProject({
@@ -37,34 +68,27 @@ export default async function ParamsPage({ params }: Params) {
       return <Project singleProject={singleProject} />;
     }
 
-    if (categorySlug) {
-      // Fetch & render all projects by category
-      const projectsByCategory = await fetchProjects({
-        preview: isDraftMode,
-        category: categorySlug as CategorySlugType,
-      });
+    // Fetch & render all projects by category
+    const projectsByCategory = await fetchProjects({
+      preview: isDraftMode,
+      category: categorySlug as CategorySlugType,
+    });
 
-      if (projectsByCategory.length === 0) {
-        notFound();
-      }
-
-      return (
-        <main>
-          <section className="projects-page">
-            <ProjectCardList
-              title={`${categorySlug} projects`}
-              projects={projectsByCategory}
-              showNumbering={false}
-            />
-          </section>
-          {/* <Link href="/projects" className="btn">
-            &lt; back to projects
-          </Link> */}
-        </main>
-      );
-    } else {
+    if (projectsByCategory.length === 0) {
       notFound();
     }
+
+    return (
+      <main>
+        <section className="projects-page">
+          <ProjectCardList
+            title={`${categorySlug} projects`}
+            projects={projectsByCategory}
+            showNumbering={false}
+          />
+        </section>
+      </main>
+    );
   } catch (error) {
     console.error("An error occurred:", error);
     notFound();

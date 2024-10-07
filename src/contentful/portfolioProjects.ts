@@ -93,7 +93,7 @@ export async function fetchProjects({
  * Optionally uses the Contentful content preview.
  */
 interface IFetchSingleProjectOptions {
-  preview: boolean;
+  preview?: boolean;
   title?: string;
   slug?: string;
 }
