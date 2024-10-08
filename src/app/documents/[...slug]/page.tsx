@@ -117,11 +117,11 @@ export async function generateMetadata(
       openGraph: {
         title: `${categorySlug} documents`,
         description: `List of all ${categorySlug}`,
-        url: `https://daniel-portfolio-next-ts-contentful.vercel.app/${categorySlug}-projects.png`,
+        url: `https://daniel-portfolio-next-ts-contentful.vercel.app/${categorySlug}-page.png`,
         siteName: "daniel's portfolio",
         images: [
           {
-            url: `https://daniel-portfolio-next-ts-contentful.vercel.app/${categorySlug}-projects.png`,
+            url: `https://daniel-portfolio-next-ts-contentful.vercel.app/${categorySlug}-page.png`,
             width: 1200,
             height: 630,
             alt: categorySlug,
@@ -137,13 +137,14 @@ export async function generateMetadata(
         description: `List of all ${categorySlug} `,
         site: "daniel's portfolio",
         images: [
+          // Twitter-specific image
           {
-            url: `https://daniel-portfolio-next-ts-contentful.vercel.app/${categorySlug}`,
+            url: `https://daniel-portfolio-next-ts-contentful.vercel.app/${categorySlug}-page.png`,
             width: 1200,
             height: 630,
             alt: categorySlug,
           },
-        ], // Twitter-specific image
+        ],
       },
     };
   } catch (error) {
