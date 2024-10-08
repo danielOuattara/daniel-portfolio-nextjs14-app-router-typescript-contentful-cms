@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     siteName: "daniel's portfolio",
     images: [
       {
-        url: "https://daniel-portfolio-next-ts-contentful.vercel.app/projects.png", // Image for Open Graph previews
+        url: "https://daniel-portfolio-next-ts-contentful.vercel.app/all-projects.png", // Image for Open Graph previews
         width: 1200,
         height: 630,
         alt: "image showing website home page",

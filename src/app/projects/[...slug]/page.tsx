@@ -95,13 +95,14 @@ export async function generateMetadata(
           description: `${singleProject.description}`,
           site: "daniel's portfolio",
           images: [
+            // Twitter-specific image
             {
               url: `https:${singleProject.featured_image?.src}`,
               width: 1200,
               height: 630,
               alt: singleProject.title,
             },
-          ], // Twitter-specific image
+          ],
         },
       };
     }
@@ -120,11 +121,11 @@ export async function generateMetadata(
       openGraph: {
         title: `${categorySlug} projects`,
         description: `List of all ${projectsByCategory} website`,
-        url: `https://daniel-portfolio-next-ts-contentful.vercel.app/${projectsByCategory}-projects`,
+        url: `https://daniel-portfolio-next-ts-contentful.vercel.app/${projectsByCategory}-projects.png`,
         siteName: "daniel's portfolio",
         images: [
           {
-            url: `https://daniel-portfolio-next-ts-contentful.vercel.app/${projectsByCategory}-projects`,
+            url: `https://daniel-portfolio-next-ts-contentful.vercel.app/${projectsByCategory}-projects.png`,
             width: 1200,
             height: 630,
             alt: `https:${projectsByCategory}`,
