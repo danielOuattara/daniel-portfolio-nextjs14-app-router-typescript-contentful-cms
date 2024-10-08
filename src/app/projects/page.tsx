@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     "Projects page for Daniel portfolio where one can find fullstack, frontend, backend and mobile projects, with link to hosted CDN",
 
   openGraph: {
-    title: "Daniel's Portfolio, FullStack Developer",
+    title: "Daniel's Portfolio, Projects page",
     description:
       "Projects page for Daniel portfolio where skills for fullstack web development are presented as projects. In this page one can find all websites, representing projects. Frontend, Backend, FullStack, Mobile",
     url: "https://daniel-portfolio-next-ts-contentful.vercel.app/projects",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "https://daniel-portfolio-next-ts-contentful.vercel.app/all-projects.png", // Image for Open Graph previews
         width: 1200,
         height: 630,
-        alt: "image showing website home page",
+        alt: "image showing website projects' page",
       },
     ],
     locale: "en_US",
