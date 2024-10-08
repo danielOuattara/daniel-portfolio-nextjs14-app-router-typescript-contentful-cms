@@ -43,6 +43,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <section className="about-page">
+      <Title title={"about me"} />
       <div className="section-center about-center">
         <div className="about-img">
           <Image
@@ -63,8 +64,6 @@ export default function AboutPage() {
           </div>
         </div>
         <article className="about-text">
-          <Title title={"about me"} />
-
           <p>
             I am a passionate full-stack developer with extensive experience in
             web and mobile application development. Over the years, I have honed
