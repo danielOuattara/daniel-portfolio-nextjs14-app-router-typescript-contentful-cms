@@ -199,6 +199,11 @@ export default async function ProjectSlugPage({ params }: Params) {
             title={`${categorySlug} projects`}
             projects={projectsByCategory}
             showNumbering={false}
+            fullstack={categorySlug === "fullstack" ? true : false}
+            backend={categorySlug === "backend" ? true : false}
+            frontend={categorySlug === "frontend" ? true : false}
+            mobile={categorySlug === "mobile" ? true : false}
+            onHomePage={false}
           />
         </section>
       </main>

@@ -35,6 +35,11 @@ export default async function HomePage() {
         projects={featuredProjects}
         showLinkToProjects={true}
         showNumbering={false}
+        fullstack={false}
+        backend={false}
+        frontend={false}
+        mobile={false}
+        onHomePage={true}
       />
     </main>
   );

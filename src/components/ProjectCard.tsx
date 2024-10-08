@@ -18,7 +18,7 @@ export default function ProjectCard({
   showNumbering,
 }: TypeSingleProjectProps) {
   return (
-    <article className="project">
+    <article className="project" id={`${project.slug}`}>
       <Link
         href={`/projects/${slugger(project.category)}/${project.slug}`}
         className="project-img-wrapper"

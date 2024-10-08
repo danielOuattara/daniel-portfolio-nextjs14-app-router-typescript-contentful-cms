@@ -15,17 +15,24 @@ export default function Project({
       <h3>{singleProject.title}</h3>
       <div>
         <div className="project-template-img-container">
-          <Image
-            src={`https:${singleProject.featured_image?.src}`}
-            alt={singleProject.title}
-            width={singleProject.featured_image?.width}
-            height={singleProject.featured_image?.height}
-            className="project-template-img"
-            style={{
-              maxWidth: "100%",
-              height: "auto",
-            }}
-          />
+          <Link
+            href={singleProject.url_website}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={`link to navigate to website ${singleProject.title}`}
+          >
+            <Image
+              src={`https:${singleProject.featured_image?.src}`}
+              alt={singleProject.title}
+              width={singleProject.featured_image?.width}
+              height={singleProject.featured_image?.height}
+              className="project-template-img"
+              style={{
+                maxWidth: "100%",
+                height: "auto",
+              }}
+            />
+          </Link>
         </div>
 
         <div className="project-stack">
@@ -38,7 +45,10 @@ export default function Project({
       <p>{singleProject.description}</p>
 
       <div className="project-links">
-        <Link href={`/projects/${singleProject.category}`} className="btn">
+        <Link
+          href={`/projects/${singleProject.category}/#${singleProject.slug}`}
+          className="btn"
+        >
           &lt; back
         </Link>
         <a

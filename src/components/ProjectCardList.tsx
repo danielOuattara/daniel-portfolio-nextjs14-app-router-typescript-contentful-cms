@@ -1,8 +1,3 @@
-/**
- * This component renders indirectly many projects.
- * It accepts 4 arguments and 2 sub components
- * */
-
 import { Title, ProjectCard } from "./index";
 import Link from "next/link";
 import { IProject } from "@/contentful/portfolioProjects";
@@ -12,6 +7,11 @@ type TypeProps = {
   showLinkToProjects?: boolean;
   projects: IProject[];
   showNumbering: boolean;
+  frontend: boolean;
+  backend: boolean;
+  fullstack: boolean;
+  mobile: boolean;
+  onHomePage: boolean;
 };
 
 export default function ProjectCardList({
@@ -19,6 +19,11 @@ export default function ProjectCardList({
   projects,
   showLinkToProjects,
   showNumbering,
+  frontend,
+  backend,
+  fullstack,
+  mobile,
+  onHomePage,
 }: TypeProps) {
   return (
     <section className="section projects">
@@ -40,6 +45,28 @@ export default function ProjectCardList({
           projects
         </Link>
       )}
+
+      <div className="document-btn-container">
+        {(backend || frontend || fullstack || mobile) && (
+          <Link
+            href="/projects"
+            className="btn center-btn"
+            aria-label="navigate back to projects page"
+          >
+            go back
+          </Link>
+        )}
+
+        {!onHomePage && (
+          <Link
+            href={`#${title}`}
+            className="btn center-btn"
+            aria-label="navigate to the top of the page"
+          >
+            to the top
+          </Link>
+        )}
+      </div>
     </section>
   );
 }

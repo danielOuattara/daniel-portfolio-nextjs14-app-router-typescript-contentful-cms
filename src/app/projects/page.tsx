@@ -54,6 +54,11 @@ export default async function AllProjectsPage() {
           title="all projects"
           projects={allProjects}
           showNumbering={true}
+          fullstack={false}
+          backend={false}
+          frontend={false}
+          mobile={false}
+          onHomePage={false}
         />
       </section>
     </main>
