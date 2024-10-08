@@ -1323,6 +1323,8 @@ p {
 
 .about-text p {
   line-height: 2;
+  text-align: justify;
+  font-size: 1.2rem;
 }
 
 .stack-container {
@@ -1351,13 +1353,21 @@ p {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     align-items: center;
-    column-gap: 4rem;
+    row-gap: 4rem;
+    column-gap: 2rem;
   }
 
-  .about-img,
+  .about-img {
+    grid-row: 1/1;
+    grid-column: 7/-1;
+  }
+
   .about-img-svg {
-    grid-column: 1 / span 5;
-    margin-bottom: 0;
+    width: 100%;
+    position: relative;
+    display: block;
+    grid-row: 1/1;
+    grid-column: 7/-1;
   }
 
   .about-text {
