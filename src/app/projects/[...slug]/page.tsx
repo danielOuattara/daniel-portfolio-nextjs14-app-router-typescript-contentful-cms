@@ -120,15 +120,15 @@ export async function generateMetadata(
     return {
       openGraph: {
         title: `${categorySlug} projects`,
-        description: `List of all ${projectsByCategory} website`,
-        url: `https://daniel-portfolio-next-ts-contentful.vercel.app/${projectsByCategory}-projects.png`,
+        description: `List of all ${categorySlug} website`,
+        url: `https://daniel-portfolio-next-ts-contentful.vercel.app/${categorySlug}-projects.png`,
         siteName: "daniel's portfolio",
         images: [
           {
-            url: `https://daniel-portfolio-next-ts-contentful.vercel.app/${projectsByCategory}-projects.png`,
+            url: `https://daniel-portfolio-next-ts-contentful.vercel.app/${categorySlug}-projects.png`,
             width: 1200,
             height: 630,
-            alt: `https:${projectsByCategory}`,
+            alt: `https:${categorySlug}`,
           },
           ...previousImages,
         ],
@@ -138,14 +138,14 @@ export async function generateMetadata(
       twitter: {
         card: "summary_large_image", // 'summary', 'summary_large_image', etc.
         title: `${categorySlug} projects`,
-        description: `List of all ${projectsByCategory} website`,
+        description: `List of all ${categorySlug} website`,
         site: "daniel's portfolio",
         images: [
           {
-            url: `https://daniel-portfolio-next-ts-contentful.vercel.app/${projectsByCategory}`,
+            url: `https://daniel-portfolio-next-ts-contentful.vercel.app/${categorySlug}`,
             width: 1200,
             height: 630,
-            alt: `https:${projectsByCategory}`,
+            alt: `https:${categorySlug}`,
           },
         ], // Twitter-specific image
       },
