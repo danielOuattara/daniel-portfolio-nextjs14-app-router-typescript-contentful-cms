@@ -3,13 +3,22 @@ import { Title } from "@/components";
 export default function ServicesPage() {
   return (
     <section className="section section-center">
-      <Title title={"fullstack best practices"} />
+      <Title title={"fullstack engineer best practices"} />
+
+      <p
+        style={{
+          textAlign: "center",
+          fontSize: "1.3rem",
+        }}
+      >
+        (from Discussions with ChatGPT)
+      </p>
 
       <div className="services-best-practices">
         <h2>Database considerations</h2>
 
         <p>
-          Securing a database for an e-commerce or any other sensitive
+          Securing a database for an e-commerce, banking or any other sensitive
           application is crucial, given the potential risks to user data,
           financial information, and the application&apos;s integrity.
           Here&apos;s my point of view on a layered, best-practices approach to
