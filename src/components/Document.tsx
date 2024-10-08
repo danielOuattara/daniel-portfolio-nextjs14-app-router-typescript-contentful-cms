@@ -20,7 +20,7 @@ export default function Document({
           href={singleDocument.verification_url}
           target="_blank"
           rel="noreferrer"
-          aria-label="link to verify certificate"
+          aria-label="link to verify the certificate"
         >
           <span className="span-verify">
             Verify The Certificate <FaMedal />

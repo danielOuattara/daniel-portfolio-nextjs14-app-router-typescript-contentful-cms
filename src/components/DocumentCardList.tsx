@@ -1,11 +1,5 @@
-/**
- * This component renders indirectly many documents.
- * It accepts 3 arguments and 2 sub components
- * */
-
 import { Title, DocumentCard } from "@/components";
 import Link from "next/link";
-import Image from "next/image";
 import { IDocument } from "@/contentful/portfolioDocuments";
 
 type TypeProps = {
