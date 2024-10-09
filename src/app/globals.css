@@ -1458,3 +1458,60 @@ p {
   margin-left: 3rem;
   list-style-type: disc;
 }
+
+/* CV */
+.cv-iframe-container {
+  /* position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 56.25%; */
+  /* 16:9 Aspect Ratio */
+
+  position: relative;
+  width: 100vw; /* Adjusts to viewport width */
+  height: 90vh; /* Adjusts to almost all viewport height (85% of it) */
+  overflow: hidden;
+}
+
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.cv-container {
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (min-width: 480px) {
+  .cv-container {
+    flex-direction: row;
+  }
+}
+
+.cv-container a {
+  color: var(--clr-primary-3);
+  margin: 1rem 2rem;
+  border: 1px solid var(--clr-primary-3);
+  border-radius: var(--radius);
+  padding: 0.25rem;
+}
+
+.cv-container a:hover {
+  color: var(--clr-primary-10);
+  background: var(--clr-primary-3);
+  cursor: pointer;
+}
+
+.cv-container a span {
+  margin-left: 1rem;
+}
