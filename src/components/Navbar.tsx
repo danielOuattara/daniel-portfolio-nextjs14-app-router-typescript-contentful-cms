@@ -42,14 +42,14 @@ export default function Navbar(props: TypeNavbar) {
     <nav className="navbar" onMouseOver={(event) => hideSubMenu(event)}>
       <div className="nav-center">
         <div className="nav-header">
-          <Link href="/">
+          <Link href="/" aria-label="logo button navigate to home ">
             <VscCode className="web-logo" />
           </Link>
           <button
             type="button"
             className="toggle-btn"
             onClick={props.toggleSidebar}
-            aria-label="logo button navigate to home "
+            aria-label="open the sidebar menu on small viewport"
           >
             <BsStack />
           </button>
