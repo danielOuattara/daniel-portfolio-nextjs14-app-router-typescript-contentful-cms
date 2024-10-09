@@ -10,7 +10,7 @@ export default function CurriculumPage() {
 
       <div className="cv-container" style={{}}>
         <Link
-          href="https://daniel-portfolio-next-ts-contentful.vercel.app/cvCurriculum_Vitae_Daniel_Ouattara.pdf"
+          href="/Curriculum_Vitae_Daniel_Ouattara.pdf"
           target="_blank"
           rel="noreferrer"
           aria-label="download the curriculum"
