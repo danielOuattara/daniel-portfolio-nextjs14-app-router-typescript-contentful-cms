@@ -1450,7 +1450,7 @@ p {
 .services-best-practices p,
 .services-best-practices li {
   text-align: justify;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
 }
 
 .services-best-practices li {
@@ -1515,5 +1515,3 @@ p {
 .cv-container a span {
   margin-left: 1rem;
 }
-
-/* force redeployment */

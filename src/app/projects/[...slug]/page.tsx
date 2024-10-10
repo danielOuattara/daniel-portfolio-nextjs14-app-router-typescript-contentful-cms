@@ -6,7 +6,7 @@ import {
   fetchProjects,
   fetchSingleProject,
 } from "@/contentful/portfolioProjects";
-import { Project, ProjectCardList } from "@/components";
+import { Project, ProjectCardList, Title } from "@/components";
 import { notFound } from "next/navigation";
 import type { Metadata, ResolvingMetadata } from "next";
 
@@ -189,7 +189,15 @@ export default async function ProjectSlugPage({ params }: Params) {
     });
 
     if (projectsByCategory.length === 0) {
-      notFound();
+      return (
+        <section className="section projects">
+          <Title title={`${categorySlug} projects`} />
+
+          <div className="section-center projects-center">
+            <h2>On production... coming soon </h2>
+          </div>
+        </section>
+      );
     }
 
     return (
