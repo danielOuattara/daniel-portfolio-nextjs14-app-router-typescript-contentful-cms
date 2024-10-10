@@ -36,6 +36,7 @@ export default function ProjectCardList({
             index={index}
             project={project}
             showNumbering={showNumbering}
+            onHomepage={onHomePage}
           />
         ))}
       </div>

@@ -35,6 +35,12 @@ export default function Project({
           </Link>
         </div>
 
+        <p>
+          {" "}
+          Level:
+          <span className="project-level">{singleProject.level}</span>
+        </p>
+
         <div className="project-stack">
           {singleProject.technologies.slice(0, 4).map((techno) => (
             <span key={techno}>{techno}</span>

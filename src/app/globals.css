@@ -1062,6 +1062,16 @@ p {
   text-decoration: underline;
 }
 
+.project-level {
+  text-transform: uppercase;
+  color: #fff;
+  background-color: var(--clr-primary-5);
+  padding: 0.25rem 0.5rem;
+  font-size: 0.85rem;
+  border-radius: var(--radius);
+  margin: 0.25rem;
+}
+
 .project-desc {
   word-spacing: 5px;
   color: var(--clr-grey-3);

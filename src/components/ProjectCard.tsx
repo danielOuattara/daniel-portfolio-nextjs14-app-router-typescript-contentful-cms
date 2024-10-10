@@ -10,12 +10,14 @@ type TypeSingleProjectProps = {
   index: number;
   project: IProject;
   showNumbering: boolean;
+  onHomepage: boolean;
 };
 
 export default function ProjectCard({
   index,
   project,
   showNumbering,
+  onHomepage,
 }: TypeSingleProjectProps) {
   return (
     <article className="project" id={`${project.slug}`}>
@@ -43,9 +45,6 @@ export default function ProjectCard({
           className="project-slug"
         >
           <h3>
-            {/* {showNumbering && (
-              <span className="project-number">#{index + 1}</span>
-            )} */}
             #&nbsp;{project.title}
             &nbsp;
             {showNumbering && (
@@ -57,6 +56,15 @@ export default function ProjectCard({
         <p className="project-desc">
           {project.description.slice(0, 85) + "..."}
         </p>
+
+        {!onHomepage && (
+          <p>
+            Category:
+            <span className="project-level">{project.category}</span>
+            &nbsp; Level:
+            <span className="project-level">{project.level}</span>
+          </p>
+        )}
 
         <div className="project-stack">
           {project.technologies.slice(0, 4).map((techno) => (
