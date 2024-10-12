@@ -36,7 +36,6 @@ export default function Project({
         </div>
 
         <p>
-          {" "}
           Level:
           <span className="project-level">{singleProject.level}</span>
         </p>
