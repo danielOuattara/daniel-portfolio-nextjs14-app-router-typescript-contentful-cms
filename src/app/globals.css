@@ -1064,7 +1064,7 @@ p {
 
 .project-specifications {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .project-level {
