@@ -1062,6 +1062,10 @@ p {
   text-decoration: underline;
 }
 
+.project-specifications {
+  display: flex;
+}
+
 .project-level {
   text-transform: uppercase;
   color: #fff;

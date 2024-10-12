@@ -58,12 +58,16 @@ export default function ProjectCard({
         </p>
 
         {!onHomepage && (
-          <p>
-            Category:
-            <span className="project-level">{project.category}</span>
-            &nbsp; Level:
-            <span className="project-level">{project.level}</span>
-          </p>
+          <div className="project-specifications">
+            <p>
+              Category:
+              <span className="project-level">{project.category}</span>
+            </p>
+            <p>
+              Level:
+              <span className="project-level">{project.level}</span>
+            </p>
+          </div>
         )}
 
         <div className="project-stack">
